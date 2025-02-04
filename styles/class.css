@@ -1,0 +1,46 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+
+nav ul
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    list-style: none;
+    text-align: center;
+}
+
+nav a
+{
+    display: block;
+    padding: 10px;
+    background: #1E0E0E;
+    color: white;
+    font-size: 20px;
+    font-family: arial;
+}
+
+nav a:hover
+{
+    background: #3271a5;
+    cursor: pointer;
+}
+
+header img
+{
+    width: 400px;
+    padding: 20px;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+}
+
+header p
+{
+    font-size: 50px;
+}
