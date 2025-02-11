@@ -13,15 +13,41 @@
   
   /* Header and Navigation */
   header {
+    position: sticky;
+    top: 0;
     background-color: #eb4034;
     color: #fff;
     padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
   }
   
   header h1 {
     display: inline-block;
     margin-right: 2em;
     vertical-align: middle;
+  }
+
+  .sign-in-container
+  {
+    padding: 20px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .sign-in-container ul
+  {
+    margin-top: 10px;
+    position: absolute;
+    list-style: none;
+    display: none;
+    background: grey;
+  }
+
+  .sign-in-container:hover ul
+  {
+    display: block;
   }
   
   /* Top-level navigation menu */
