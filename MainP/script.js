@@ -28,5 +28,5 @@ function showSlides() {
   dots[slideIndex - 1].className += " active";
 
   // Change slide every 4 seconds
-  setTimeout(showSlides, 10000);
+  setTimeout(showSlides, 4000);
 }
