@@ -15,7 +15,7 @@
   header {
     position: sticky;
     top: 0;
-    background-color: #854c48;
+    background-color: #a24943;
     color: #fff;
     padding: 1em;
     display: flex;
@@ -162,7 +162,7 @@
   
   /* Footer */
   footer {
-    background-color: #333;
+    background-color: #726565;
     color: #fff;
     text-align: center;
     padding: 1em;
