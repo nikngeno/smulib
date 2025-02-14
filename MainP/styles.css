@@ -89,20 +89,38 @@
     background-color: #444;
     min-width: 140px;
     z-index: 999;
+    overflow: hidden;
   }
   
   .dropdown-content li {
     float: none; /* Sub-menu items stack vertically */
+    width: 100%;
   }
   
   /* Dropdown items styling */
   .dropdown-content li a {
     padding: 8px 12px;
+    width: 100%;
+  }
+
+  .dropdown-content li a:hover
+  {
+    background: #87ceeb;
   }
   
   /* Hover to open the dropdown */
   .dropdown:hover .dropdown-content {
+    top: 40px;
     display: block;
+    animation: dropdown-animation 500ms ease-in;
+  }
+
+  .dropdown .dropdown-content
+  {
+    top: 20px;
+    transition-property: top;
+    transition-property: display;
+    transition-delay: 1s;
   }
   
   /* Slideshow container */
@@ -123,6 +141,19 @@
     display: block;
   }
   
+/* Animation for nav dropdown */
+@keyframes dropdown-animation
+{
+  0% 
+  {
+    max-height: 0;
+  }
+  100%
+  {
+    max-height: 1000px;
+  }
+}
+
   /* Animation for slides (fade in) */
   .fade {
     animation-name: fade;
