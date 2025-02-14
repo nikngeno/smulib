@@ -92,18 +92,19 @@
 
     <div>
     <section align ="left">
-      <form><strong>
+      <form action="http://localhost:8080/smulib/MainP/contact.php" method="POST"><strong>
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value ="Enter Your Name"style="width:500px; height:30px;" ><br>
+        <input type="text" id="name" name="name" placeholder ="Enter Your Name"style="width:500px; height:30px;" ><br>
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value ="Enter Email" style="width:500px; height:30px;">
+        <input type="email" id="email" name="email" placeholder ="Enter Your Email" style="width:500px; height:30px;">
         <br>
-        <label for="Email">Phonenumber:</label><br>
-        <input type="text" id="phonenumber" name="phonenumber" maxlength ="12" value ="Enter Phone Number" style="width:500px; height:30px;"><br>
-        <label for="Comments">Your Question:</label><br>
-        <textarea id="comments" name="comments" style="width:500px; height:250px;"></textarea><br>
+        <label for="phonenumber">Phone Number:</label><br>
+        <input type="text" id="phonenumber" name="phonenumber" maxlength ="12" placeholder ="Enter Your Phone Number" style="width:500px; height:30px;"><br>
+
+        <label for="message">Your Question or Comment:</label><br>
+        <textarea id="message" name="message" style="width:500px; height:250px;"placeholder="Use this section for your questions or comments" required></textarea><br>
         <br>
-        <input type="submit" value="Send" style="width:50px; height:30px;">
+        <input type="submit" value="Submit" style="width:50px; height:30px;">
         <input type="reset" value="Reset" style="width:50px; height:30px;">
       </strong>
       </form>
@@ -146,12 +147,12 @@
                     <tr>
                       <td>Saturday</td>
                       <td align="center">9:00 AM</td>
-                      <td align="center">5:00 PM</td>
+                      <td align="center">1:00 PM</td>
                       </tr>
                       <tr>
                         <td>Sunday</td>
-                        <td align="center">9:00 AM</td>
-                        <td align="center">5:00 PM</td>
+                        <td align="center">11:00 AM</td>
+                        <td align="center">2:00 PM</td>
                         </tr>
                       </tr>
                     </tr>
@@ -163,7 +164,9 @@
         </tr>
       </table>
        <br>
-
+      
+       <p><strong>* SMU Library will be closed during public holidays</strong></p>
+       <br>
        <p><strong>Stay Connected:</strong></p>
        <p>Follow us on social media to stay up-to-date on our latest news, promotions</p>
        <p>Facebook: <a href="https://www.facebook.com" target="blank">
