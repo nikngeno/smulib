@@ -203,6 +203,7 @@
   
   /* Footer */
   footer {
+    position: relative;
     background-color: #726565;
     color: #fff;
     text-align: center;
