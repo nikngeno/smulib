@@ -53,6 +53,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error: " . $stmt->error;
     }
+    session_start();
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Process the form...
+
+        if ($stmt->execute()) {
+            $_SESSION['success'] = true;
+            header("Location: contact.php");
+            exit();
+        }
+    }
+
 
     // Close the statement
     $stmt->close();
