@@ -30,27 +30,6 @@
     vertical-align: middle;
   }
 
-  .sign-in-container
-  {
-    padding: 20px;
-    align-self: center;
-    justify-self: center;
-  }
-
-  .sign-in-container ul
-  {
-    margin-top: 10px;
-    position: absolute;
-    list-style: none;
-    display: none;
-    background: grey;
-  }
-
-  .sign-in-container:hover ul
-  {
-    display: block;
-  }
-
   /* Content Container */
   .content-container
   {
