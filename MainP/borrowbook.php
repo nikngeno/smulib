@@ -1,6 +1,10 @@
 <?php
 
-$search = $_POST["search"];
+$search = $_POST['search'];
+$limit = $_POST['limit'];
+$offset = $_POST['offset'];
+$sort = $_POST['sort'];
+
 
 $host = "localhost";
 $user = "root";
@@ -14,7 +18,7 @@ if (!$conn) {
     die('Could not connect to MySQL: ' . mysqli_connect_error());
 }
 
-//echo 'Connected successfully';
+echo 'Connected successfully';
 
 $sql = "select * from books where BookName like '%$search%'";
 

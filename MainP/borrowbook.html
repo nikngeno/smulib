@@ -66,6 +66,14 @@
               <!--<li><a href="#">Sub Item 3</a></li> -->
             </ul>
           </li>
+             <!-- Menu Item 6 -->
+             <li class="dropdown">
+              <a href="">My Account</a>
+              <ul class="dropdown-content">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="contact.html">Checked Out</a></li>
+              </ul>
+            </li>
         </ul>
       </nav>
     </div>
@@ -89,11 +97,11 @@
       <h2>Borrow a Book</h2>
       <p>Use the search functionality below to search a book either by Author or Book Title.</p>
       <br>
-      <form action="http://localhost:8080/smulib/MainP/borrowbook.php" method="post">
+      <form action="http://127.0.0.1:8080/smulib/MainP/borrowbook.php" method="post">
         <label for="book-title">Book Title:</label>
-        <input type="text" id="book-title" name="search" required>
+        <input type="text" id="book-title" name="book-title" required>
         <!--<label for="author">Author:</label>
-        <input type="text" id="author" name="author" required> -->
+        <input type="text" id="author" name="author" required>-->
        
         <input type="submit" value="Search">
       </form>
