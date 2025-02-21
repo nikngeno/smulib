@@ -1,9 +1,9 @@
 <?php
 
 $search = $_POST['search'];
-$limit = $_POST['limit'];
-$offset = $_POST['offset'];
-$sort = $_POST['sort'];
+//$limit = $_POST['limit'];
+//$offset = $_POST['offset'];
+//$sort = $_POST['sort'];
 
 
 $host = "localhost";
