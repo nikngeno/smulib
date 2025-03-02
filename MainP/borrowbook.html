@@ -60,23 +60,31 @@
           <li class="dropdown">
             <a href="#">About Us</a>
             <ul class="dropdown-content">
-              <li><a href="#">Our Staff</a></li>
+              <li><a href="team.html">Our Staff</a></li>
               <li><a href="contact.html">Contact Us</a></li>
               <li><a href="location.html">Location</a></li>
               <!--<li><a href="#">Sub Item 3</a></li> -->
             </ul>
           </li>
+             <!-- Menu Item 6 -->
+             <li class="dropdown">
+              <a href="">My Account</a>
+              <ul class="dropdown-content">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="cart.html">My Cart</a></li>
+              </ul>
+            </li>
         </ul>
       </nav>
     </div>
-    <div class="sign-in-container">
+    <!--<div class="sign-in-container">
       <p>Sign In</p>
       <ul>
         <li>My Profile</li>
         <li>My Cart</li>
         <li>Sign Out</li>
       </ul>
-    </div>
+    </div>-->
   </header>
 
   
@@ -89,11 +97,11 @@
       <h2>Borrow a Book</h2>
       <p>Use the search functionality below to search a book either by Author or Book Title.</p>
       <br>
-      <form>
+      <form action="http://127.0.0.1:8080/smulib/MainP/borrowbook.php" method="post">
         <label for="book-title">Book Title:</label>
         <input type="text" id="book-title" name="book-title" required>
-        <label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>
+        <!--<label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>-->
        
         <input type="submit" value="Search">
       </form>

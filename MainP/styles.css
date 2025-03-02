@@ -38,7 +38,17 @@
     width: 70%;
     margin: 0 auto;
   }
-  
+  /* updated navigarion */
+  /* Remove or comment out the old float/position lines */
+/* nav ul li {
+   position: fixed; 
+   position: relative; 
+   float: left; 
+   margin-right: 1em;
+} */
+
+
+
   /* Top-level navigation menu */
   nav ul {
     display: inline-block;
@@ -101,6 +111,10 @@
     transition-property: display;
     transition-delay: 1s;
   }
+  .right {
+    float: right;
+  }
+  
   
   /* Slideshow container */
   .slideshow-container {
