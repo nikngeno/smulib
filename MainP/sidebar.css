@@ -1,0 +1,53 @@
+/* sidebar.css */
+
+/* Basic reset or body style (optional) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar container */
+ /* sidebar.css */
+
+.sidebar {
+    float: left;
+    width: 200px;
+    min-height: 100vh;
+    background-color: #3260a8;
+    color: #fff;
+    padding: 1rem;
+    margin: 0;                   
+    box-sizing: border-box;
+  }
+  
+  
+  
+  /* Sidebar heading */
+  .sidebar h3 {
+    margin-top: 0;
+  }
+  
+  /* Remove default list styles */
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+  
+  /* Spacing for each list item */
+  .sidebar li {
+    margin: 0.5rem 0;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Hover effect for links */
+  .sidebar a:hover {
+    text-decoration: underline;
+  }
+  

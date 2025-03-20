@@ -10,6 +10,8 @@
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background: #f5f5dc;
+    margin: 0;
+    padding: 0;
   }
   
   /* Header and Navigation */
@@ -204,4 +206,15 @@
     margin-top: 2em;
     clear: both;
   }
+  .table-container {
+    margin-left: 200px; /* matches .sidebar’s width */
+    padding: 1rem;
+    box-sizing: border-box;
+    /* Remove any clear: both; or margin-top if it pushes content down. */
+  }
   
+  html, body {
+    margin: 0;
+    padding: 0;
+    
+  }

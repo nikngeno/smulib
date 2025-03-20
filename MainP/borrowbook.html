@@ -6,6 +6,10 @@
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="styles.css">
+  <!-- New stylesheet for your books layout -->
+  <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
 
@@ -91,20 +95,222 @@
     <!-- Main Content Areas -->
     
      <!-- Use this section to update code for borrowing books-->
+<!-- SEARCH BAR SECTION (uses styles from search.css) -->
+<section class="search-bar">
+  <h2>Search the Library Catalog</h2>
 
+  <form action="#" method="get" class="search-form">
+    
+    <!-- Search type dropdown (Keyword, Title, Author, etc.) -->
+    <label for="search-type" class="sr-only">Search Type</label>
+    <select id="search-type" name="search-type">
+      <option value="keyword">Keyword</option>
+      <option value="title">Title</option>
+      <option value="author">Author</option>
+      <option value="author">Genre</option>
+    </select>
 
-    <section>
-      <h2>Borrow a Book</h2>
-      <p>Use the search functionality below to search a book either by Author or Book Title.</p>
-      <br>
-      <form action="http://127.0.0.1:8080/smulib/MainP/borrowbook.php" method="post">
-        <label for="book-title">Book Title:</label>
-        <input type="text" id="book-title" name="book-title" required>
-        <!--<label for="author">Author:</label>
-        <input type="text" id="author" name="author" required>-->
-       
-        <input type="submit" value="Search">
-      </form>
+    <!-- Main text input -->
+    <label for="search-input" class="sr-only">Search</label>
+    <input 
+      type="text" 
+      id="search-input" 
+      name="q" 
+      placeholder="Find books, movies and more"
+    >
+
+    <!-- Removed the Collection dropdown and the checkbox container. -->
+
+    <!-- Submit button -->
+    <button type="submit" class="search-button">Search</button>
+  </form>
+</section>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <nav>
+    <h3>Browse Categories</h3>
+    <ul>
+      <li><a href="#">Biography &amp; Memoir</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Cooking</a></li>
+      <li><a href="#">Fantasy, Horror &amp; Sci-Fi</a></li>
+      <li><a href="#">Historical Fiction</a></li>
+      <li><a href="#">Literary Fiction</a></li>
+      <li><a href="#">Mystery &amp; Thriller</a></li>
+      <!-- etc. -->
+    </ul>
+  </nav>
+</aside>
+
+      
+      <!-- Table container (optional) -->
+  <div class="table-container">
+    <table class="book-table">
+      <!-- Row heading: New Additions -->
+      <tr>
+        <!-- Span across all 5 columns -->
+        <td colspan="5" class="row-heading">New Additions</td>
+      </tr>
+      <tr>
+        <!-- 5 columns of books in the first row -->
+        <td>
+          <h3 class="book-title">The Partner</h3>
+          <img src="book_images/partner.png" alt="Book 1" class="book-image" />
+          <div class="book-details">
+            <p class="price">$9.99</p>
+            <p class="rating">★★★★☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title">The Professor</h3>
+          <img src="book_images/professor.jpg" alt="Book 2" class="book-image" />
+          <div class="book-details">
+            <p class="price">$12.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title">The Wise Man's Fear</h3>
+          <img src="book_images/wise.jpg" alt="Book 3" class="book-image" />
+          <div class="book-details">
+            <p class="price">$14.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> The Name of the Wind</h3>
+          <img src="book_images/wind.jpg" alt="Book 4" class="book-image" />
+          <div class="book-details">
+            <p class="price">$8.99</p>
+            <p class="rating">★★★★★</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> To Read</h3>
+          <img src="book_images/read.png" alt="Book 5" class="book-image" />
+          <div class="book-details">
+            <p class="price">$19.99</p>
+            <p class="rating">★★★★☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row heading: Most Borrowed -->
+      <tr>
+        <td colspan="5" class="row-heading">Most Borrowed</td>
+      </tr>
+      <tr>
+        <!-- 5 columns of books in the second row -->
+        <td>
+          <h3 class="book-title"> When we Flew away</h3>
+          <img src="book_images/flew.png" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <!-- Repeat similar structure for columns 2-5 in this row -->
+        <td>
+          <h3 class="book-title"> Truth and Lies</h3>
+          <img src="book_images/truth.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> Ripped from the Healines</h3>
+          <img src="book_images/ripped.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> Beneath a Scarlet Sky</h3>
+          <img src="book_images/sky.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> The Friend</h3>
+          <img src="book_images/friend.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Row heading: Most Liked -->
+      <tr>
+        <td colspan="5" class="row-heading">Most Liked</td>
+      </tr>
+      <tr>
+        <!-- 5 columns of books in the third row -->
+        <td>
+          <h3 class="book-title"> Unstoppable Confidence</h3>
+          <img src="book_images/confidence.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <!-- Repeat similar structure for columns 2-5 in this row -->
+        <td>
+          <h3 class="book-title"> Java Programming</h3>
+          <img src="book_images/java.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> Python for Kids</h3>
+          <img src="book_images/python.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> React Native</h3>
+          <img src="book_images/react.png" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+        <td>
+          <h3 class="book-title"> The C Programming Language</h3>
+          <img src="book_images/c.jpg" alt="Book 6" class="book-image" />
+          <div class="book-details">
+            <p class="price">$10.99</p>
+            <p class="rating">★★★☆☆</p>
+            <button class="book-action-button">Add to Cart</button>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 SMU Library</p>
