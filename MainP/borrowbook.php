@@ -6,13 +6,13 @@ $search = $_POST['search'];
 //$sort = $_POST['sort'];
 
 
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "smulib";
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "smulib"; 
 
 
-$conn = mysqli_connect($host, $user, $pass, $db);
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 if (!$conn) {
     die('Could not connect to MySQL: ' . mysqli_connect_error());
