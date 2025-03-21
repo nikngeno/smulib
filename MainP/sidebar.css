@@ -14,11 +14,12 @@ body {
     float: left;
     width: 200px;
     min-height: 100vh;
-    background-color: #3260a8;
+    background-color: #56595e;
     color: #fff;
     padding: 1rem;
-    margin: 0;                   
+    margin: 0;
     box-sizing: border-box;
+    
   }
   
   
