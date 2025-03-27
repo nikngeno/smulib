@@ -62,16 +62,19 @@
       outline: 0;
       display: inline-block;
       padding: 8px;
+      margin: 4px;
       color: white;
-      background-color: #000;
-      text-align: center;
+      background-color: black;
       cursor: pointer;
-      width: 100%;
+    }
+    .button * {
+      text-decoration: none;
+      color: inherit;
     }
     
     .button:hover {
-      background-color: #555;
-    }
+      background-color: gray;
+    } 
     </style>
 
 </head>
@@ -169,8 +172,10 @@
         <h2>Amber Mattoni</h2>
         <p class="title">Frontend Engineer</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>amber.mattoni@stmartin.edu</p>
-        <p><button class="button">Contact</button></p>
+        <div>
+          <button class="button"><a href="mailto:amber.mattoni@stmartin.edu">Email</a></button>
+          <button class="button"><a href="tel:5551234567">Call</a></button>
+        </div>
       </div>
     </div>
   </div>
@@ -182,8 +187,10 @@
         <h2>Miguel Gomez</h2>
         <p class="title">Full Stack & Reporting</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>miguel.gomez@stmartin.edu</p>
-        <p><button class="button">Contact</button></p>
+        <div>
+          <button class="button"><a href="mailto:miguel.gomez@stmartin.edu">Email</a></button>
+          <button class="button"><a href="tel:5559876543">Call</a></button>
+        </div>
       </div>
     </div>
   </div>
@@ -195,8 +202,10 @@
         <h2>Nicholas Ngeno</h2>
         <p class="title">Backend Engineer</p>
         <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-        <p>nicholas.ngeno@stmartin.edu</p>
-        <p><button class="button">Contact</button></p>
+        <div>
+          <button class="button"><a href="mailto:nicholas.ngeno@stmartin.edu">Email</a></button>
+          <button class="button"><a href="tel:5552468101">Call</a></button>
+        </div>
       </div>
     </div>
   </div>
