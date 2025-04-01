@@ -280,3 +280,35 @@ body > div {
   width: 100% !important;
   justify-content: space-between !important;
 }
+.cart-table {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 40% 15% 20% 15% 10%;
+  border-radius: 12px;
+  background-color: #2c2c2c;
+  overflow: hidden;
+}
+
+.cart-row {
+  display: contents; /* So that each .cart-col becomes a grid cell */
+}
+
+.cart-row.header .cart-col {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.5);
+}
+
+.cart-row:not(.header) .cart-col {
+  padding: 1.25rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-col.col-product {
+  justify-content: flex-start;
+}
