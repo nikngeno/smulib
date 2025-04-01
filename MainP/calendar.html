@@ -94,7 +94,7 @@
   padding: 0;}
   
   .month {
-    padding: 70px 25px;
+    padding: 25px;
     width: 100%;
     background: #ba0c2f;
     text-align: center;
@@ -156,6 +156,18 @@
     background: #ba0c2f;
     color: #ffffff !important
   }
+
+  .calendar-body {
+    width: 500px;
+  }
+
+  .calendar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 70px;
+    margin: 50px auto;
+  }
   
   /* Add media queries for smaller screens */
   @media screen and (max-width:720px) {
@@ -176,7 +188,10 @@
     <!--/*<header class="top-header">
       <h1>SMU Library Calendar</h1>
   </header>*/-->
-      
+  <div class = "calendar-wrap" >
+
+ 
+   <div class="calendar-body">
   <div class="month">      
     <ul>
       <li class="prev">&#10094;</li>
@@ -231,6 +246,18 @@
     <li>30</li>
     <li>31</li>
   </ul>
+  </div>
+  <div class = "calendar-events">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>February 17, 2025: Library Orientation</li>
+      <li>February 20, 2025: Book Fair</li>
+      <li>February 25, 2025: Author Talk</li>
+      <li>February 28, 2025: Study Skills Workshop</li>
+    </ul>
+
+  </div>
+</div>
   
   
   
