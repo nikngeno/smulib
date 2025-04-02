@@ -34,8 +34,8 @@
             <a href="#">Service</a>
             <ul class="dropdown-content">
               <li><a href="bookappointment.html">Book an Appointment</a></li>
-              <li><a href="#">Reserve  Room</a></li>
-              <li><a href="#">Request A Librarian </a></li>
+              <li><a href="reserveroom.html">Reserve  Room</a></li>
+              <li><a href="requestlibrarian.html">Request A Librarian </a></li>
             </ul>
           </li>
 
@@ -92,42 +92,48 @@
     <div class="librarian-gallery">
       <!-- Librarian Card -->
       <div class="librarian-card" onclick="showLibrarianDetails('lib1')">
-        <img src="images/librarian1.jpg" alt="Librarian Sarah">
+        <img src="people_images/sarah.png" alt="Librarian Sarah">
         <h3>Sarah Johnson</h3>
         <p>Specialty: Literature & Humanities</p>
       </div>
   
       <div class="librarian-card" onclick="showLibrarianDetails('lib2')">
-        <img src="images/librarian2.jpg" alt="Librarian David">
+        <img src="people_images/David.png" alt="Librarian David">
         <h3>David Lee</h3>
         <p>Specialty: Science & Technology</p>
       </div>
   
       <div class="librarian-card" onclick="showLibrarianDetails('lib3')">
-        <img src="images/librarian3.jpg" alt="Librarian Maria">
+        <img src="people_images/Maria.png" alt="Librarian Maria">
         <h3>Maria Kim</h3>
         <p>Specialty: Social Sciences</p>
       </div>
   
       <div class="librarian-card" onclick="showLibrarianDetails('lib4')">
-        <img src="images/librarian4.jpg" alt="Librarian James">
+        <img src="people_images/James.png" alt="Librarian James">
         <h3>James Blake</h3>
         <p>Specialty: Business & Economics</p>
       </div>
   
       <div class="librarian-card" onclick="showLibrarianDetails('lib5')">
-        <img src="images/librarian5.jpg" alt="Librarian Amina">
+        <img src="people_images/Amina.png" alt="Librarian Amina">
         <h3>Amina Yusuf</h3>
         <p>Specialty: Health & Nursing</p>
       </div>
     </div>
   
-    <div id="librarian-details" class="librarian-details hidden">
-      <h3 id="librarian-name"></h3>
-      <p><strong>Specialty:</strong> <span id="librarian-specialty"></span></p>
-      <p><strong>About:</strong> <span id="librarian-bio"></span></p>
+   <!-- Librarian Detail Modal -->
+<div id="librarianModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <img id="modal-image" src="" alt="Librarian Photo">
+      <h3 id="modal-name"></h3>
+      <p><strong>Specialty:</strong> <span id="modal-specialty"></span></p>
+      <p><strong>About:</strong> <span id="modal-bio"></span></p>
       <button onclick="redirectToLibrarianCalendar()">Book a Session</button>
     </div>
+  </div>
+  
   </main>
   
   
