@@ -34,7 +34,7 @@ body {
   }
   
   .calendar-table td.available {
-    background-color: #d9e9ff;
+    background-color: #87dcb8;
     cursor: pointer;
     transition: background-color 0.3s;
   }
@@ -44,7 +44,7 @@ body {
   }
   
   .calendar-table td.booked {
-    background-color: #f0f0f0;
+    background-color: #a05a5a;
     color: #aaa;
     cursor: not-allowed;
   }
