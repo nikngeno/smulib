@@ -133,5 +133,15 @@
 
   <!-- Link to external JavaScript -->
   <script src="script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      const msg = document.createElement('p');
+      msg.style.color = 'green';
+      msg.textContent = 'Your appointment has been booked successfully!';
+      document.querySelector('.appointment-container').prepend(msg);
+    }
+  </script>
+  
 </body>
 </html>
