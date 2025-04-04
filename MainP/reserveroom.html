@@ -6,6 +6,9 @@
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="appointment.css">
+  <link rel="stylesheet" href="reserveroom.css">
+
 </head>
 <body>
 
@@ -78,32 +81,36 @@
         </ul>
       </nav>
     </div>
-    <!-- <div class="sign-in-container">
-      <p>Sign In</p>
-      <ul>
-        <li>My Profile</li>
-        <li>My Cart</li>
-        <li>Sign Out</li>
-      </ul>
-    </div> -->
+  
   </header>
 
   <!-- Main Content Areas -->
-  <main>
-    <section>
-       <!-- Contains Google Map code -->
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17266.27115522037!2d-122.81999863310061!3d47.034984878520284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54903779fcbf5455%3A0x69b6da844caec1c9!2sSaint%20Martin&#39;s%20University!5e0!3m2!1sen!2sus!4v1739320837103!5m2!1sen!2sus" width="1000" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </iframe>
-    </section>
-
-    <section>
-     <h2 align="center">Open Hours & Location</h2>
-      <p>
-        Our doors are open Monday through Saturday, ensuring that visitors have ample time to browse our shelves, participate in events, or seek research assistance. Conveniently located in the heart of the downtown district, the library is easily accessible by public transportation, and free parking is available onsite for those who prefer to drive. Whether you’re stopping in for a quick visit or spending the day delving into our collections, we look forward to welcoming you.
-      </p>
-    </section>
-  </main> 
+  <main class="room-reservation-container">
+    <h2>Reserve a Study Room</h2>
+    <div class="room-gallery">
+      <!-- Example Room Card -->
+      <div class="room-card" onclick="showRoomDetails('room1')">
+        <img src="room_images/room1.png" alt="Study Room 1">
+        <h3>Room A</h3>
+      </div>
+      <div class="room-card" onclick="showRoomDetails('room2')">
+        <img src="room_images/room2.png" alt="Study Room 2">
+        <h3>Room B</h3>
+      </div>
+      <!-- Add more rooms as needed -->
+    </div>
+  
+    <!-- Room Detail Section (Dynamic) -->
+    <div id="room-details" class="room-details hidden">
+      <h3 id="room-title"></h3>
+      <p><strong>Capacity:</strong> <span id="room-capacity"></span></p>
+      <p><strong>Floor:</strong> <span id="room-floor"></span></p>
+      <p><strong>Description:</strong> <span id="room-description"></span></p>
+      <button id="book-btn" onclick="redirectToCalendar()">Book This Room</button>
+    </div>
+  </main>
+  
+  
 
   <!-- Footer -->
   <footer>
@@ -111,6 +118,7 @@
   </footer>
 
   <!-- Link to external JavaScript -->
+  <script src="javascript/reserveroom.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

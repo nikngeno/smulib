@@ -1,0 +1,79 @@
+.appointment-container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(43, 58, 103, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .appointment-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2b3a67;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  
+  .appointment-form label {
+    font-weight: 600;
+    color: #2b3a67;
+  }
+  
+  .appointment-form input,
+  .appointment-form select,
+  .appointment-form textarea {
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fafafa;
+    transition: border-color 0.2s ease;
+  }
+  
+  .appointment-form input:focus,
+  .appointment-form select:focus,
+  .appointment-form textarea:focus {
+    border-color: #2b3a67;
+    outline: none;
+  }
+  
+  .appointment-form textarea {
+    resize: vertical;
+  }
+  
+  .appointment-form .terms {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .appointment-form .terms input {
+    margin-right: 8px;
+  }
+  
+  .appointment-form button {
+    background-color: #2b3a67;
+    color: white;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .appointment-form button:hover {
+    background-color: #1c264e;
+  }
+  

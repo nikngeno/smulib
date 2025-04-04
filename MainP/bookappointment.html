@@ -6,6 +6,8 @@
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="appointment.css">
+
 </head>
 <body>
 
@@ -78,32 +80,51 @@
         </ul>
       </nav>
     </div>
-    <!-- <div class="sign-in-container">
-      <p>Sign In</p>
-      <ul>
-        <li>My Profile</li>
-        <li>My Cart</li>
-        <li>Sign Out</li>
-      </ul>
-    </div> -->
+  
   </header>
 
   <!-- Main Content Areas -->
-  <main>
-    <section>
-       <!-- Contains Google Map code -->
-        <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17266.27115522037!2d-122.81999863310061!3d47.034984878520284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54903779fcbf5455%3A0x69b6da844caec1c9!2sSaint%20Martin&#39;s%20University!5e0!3m2!1sen!2sus!4v1739320837103!5m2!1sen!2sus" width="1000" height="700" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </iframe>
-    </section>
-
-    <section>
-     <h2 align="center">Open Hours & Location</h2>
-      <p>
-        Our doors are open Monday through Saturday, ensuring that visitors have ample time to browse our shelves, participate in events, or seek research assistance. Conveniently located in the heart of the downtown district, the library is easily accessible by public transportation, and free parking is available onsite for those who prefer to drive. Whether you’re stopping in for a quick visit or spending the day delving into our collections, we look forward to welcoming you.
-      </p>
-    </section>
-  </main> 
+  <main class="appointment-container">
+    <h2>Book an Appointment</h2>
+    <form class="appointment-form" action="http://localhost:8080/smulib/MainP/php_files/appointment.php" method="POST">
+      <label for="appointment-type">Appointment Type</label>
+      <select id="appointment-type" required>
+        <option value="">-- Please select --</option>
+        <option value="study-room">Study Room Reservation</option>
+        <option value="tech-help">Tech Help</option>
+        <option value="event">Event Registration</option>
+        <option value="peer-help">Tutoring / Peer Help</option>
+      </select>
+  
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="AppointmentDate" required>
+  
+      <label for="time">Preferred Time</label>
+      <input type="time" id="time" name="AppointmentTime" required>
+  
+      <label for="location">Location / Room (optional)</label>
+      <input type="text" id="location" placeholder="e.g., Room A1 or Online" name="Location">
+  
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Name" required>
+  
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required>
+  
+      <label for="card">Library Card Number</label>
+      <input type="text" id="card" name="LibraryCardNumber" required>
+  
+      <label for="notes">Additional Notes (optional)</label>
+      <textarea id="notes" rows="4" placeholder="Any specific needs or info?" name="Comments"></textarea>
+  
+      <label class="terms">
+        <input type="checkbox" required> I accept the appointment policy and terms.
+      </label>
+  
+      <button type="submit">Submit Appointment</button>
+    </for>
+  </main>
+  
 
   <!-- Footer -->
   <footer>
@@ -112,5 +133,15 @@
 
   <!-- Link to external JavaScript -->
   <script src="script.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      const msg = document.createElement('p');
+      msg.style.color = 'green';
+      msg.textContent = 'Your appointment has been booked successfully!';
+      document.querySelector('.appointment-container').prepend(msg);
+    }
+  </script>
+  
 </body>
 </html>
