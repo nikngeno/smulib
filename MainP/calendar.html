@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMU Library</title>
+  <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- New stylesheet for your books layout -->
+  <link rel="stylesheet" href="book.css">
+  <link rel="stylesheet" href="search.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <script src ="javascript/cart.js" async></script>
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <div class="nav-container">
+      <h1><a href= "index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+      <nav>
+        <ul>
+          <!-- Menu Item 1 -->
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <ul class="dropdown-content">
+              <li><a href="borrowbook.html">Borrow a Book</a></li>
+              <li><a href="#">Return a Book</a></li>
+              <li><a href="#">Sell a Book</a></li>
+              <li><a href="#">Buy a Book</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 2 -->
+          <li class="dropdown">
+            <a href="#">Service</a>
+            <ul class="dropdown-content">
+              <li><a href="bookappointment.html">Book an Appointment</a></li>
+              <li><a href="reserveroom.html">Reserve  Room</a></li>
+              <li><a href="requestlibrarian.html">Request A Librarian </a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 3 -->
+          <li class="dropdown">
+            <a href="#">News and Events</a>
+            <ul class="dropdown-content">
+              <li><a href="calendar.html">Latest News</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Support the Library</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 4 -->
+          <li class="dropdown">
+            <a href="#">For You</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Student</a></li>
+              <li><a href="#">Military</a></li>
+              <li><a href="#">Public</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 5 -->
+          <li class="dropdown">
+            <a href="#">About Us</a>
+            <ul class="dropdown-content">
+              <li><a href="team.html">Our Staff</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="location.html">Location</a></li>
+              <!--<li><a href="#">Sub Item 3</a></li> -->
+            </ul>
+          </li>
+             <!-- Menu Item 6 -->
+             <li class="dropdown">
+              <a href="">My Account</a>
+              <ul class="dropdown-content">
+                <li><a href="#">Sign in</a></li>
+                <li><a href="maincart.html">My Cart</a></li>
+              </ul>
+            </li>
+        </ul>
+      </nav>
+    </div>
+    <!--<div class="sign-in-container">
+      <p>Sign In</p>
+      <ul>
+        <li>My Profile</li>
+        <li>My Cart</li>
+        <li>Sign Out</li>
+      </ul>
+    </div>-->
+  </header>
+
+  
+
+      <style>
+      .top-header {
+          background-color: #ba0c2f; /* Solid color */
+          color: #ffffff;
+          margin-bottom: 30px;
+          padding: 20px;
+          text-align: center;
+      }
+  * {box-sizing: border-box;}
+  ul {list-style-type: none;}
+  body {font-family: Merriweather;
+  padding: 0;}
+  
+  .month {
+    padding: 25px;
+    width: 100%;
+    background: #ba0c2f;
+    text-align: center;
+  }
+  
+  .month ul {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .month ul li {
+    color: #ffffff;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  
+  .month .prev {
+    float: left;
+    padding-top: 10px;
+  }
+  
+  .month .next {
+    float: right;
+    padding-top: 10px;
+  }
+  
+  .weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #a7a7a7;
+  }
+  
+  .weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .days {
+    padding: 10px 0;
+    background: #ffffff;
+    margin: 0;
+  }
+  
+  .days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color: #808285;
+  }
+  
+  .days li .active {
+    padding: 5px;
+    background: #ba0c2f;
+    color: #ffffff !important
+  }
+
+  .calendar-body {
+    width: 500px;
+  }
+
+  .calendar-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap : 70px;
+    margin: 50px auto;
+  }
+  
+  /* Add media queries for smaller screens */
+  @media screen and (max-width:720px) {
+    .weekdays li, .days li {width: 13.1%;}
+  }
+  
+  @media screen and (max-width: 420px) {
+    .weekdays li, .days li {width: 12.5%;}
+    .days li .active {padding: 10px;}
+  }
+  
+  @media screen and (max-width: 290px) {
+    .weekdays li, .days li {width: 12.2%;}
+  }
+  </style>
+ 
+    <!-- Calendar -->
+    <!--/*<header class="top-header">
+      <h1>SMU Library Calendar</h1>
+  </header>*/-->
+  <div class = "calendar-wrap" >
+
+ 
+   <div class="calendar-body">
+  <div class="month">      
+    <ul>
+      <li class="prev">&#10094;</li>
+      <li class="next">&#10095;</li>
+      <li>
+        February<br>
+        <span style="font-size:18px">2025</span>
+      </li>
+    </ul>
+  </div>
+  
+  <ul class="weekdays">
+    <li>Sunday</li>
+    <li>Monday</li>
+    <li>Tuesday</li>
+    <li>Wednesday</li>
+    <li>Thursday</li>
+    <li>Friday</li>
+    <li>Saturday</li>
+  </ul>
+  
+  <ul class="days">  
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <li>11</li>
+    <li>12</li>
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li><span class="active">17</span></li>
+    <li>18</li>
+    <li>19</li>
+    <li>20</li>
+    <li>21</li>
+    <li>22</li>
+    <li>23</li>
+    <li>24</li>
+    <li>25</li>
+    <li>26</li>
+    <li>27</li>
+    <li>28</li>
+    <li>29</li>
+    <li>30</li>
+    <li>31</li>
+  </ul>
+  </div>
+  <div class = "calendar-events">
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li>February 17, 2025: Library Orientation</li>
+      <li>February 20, 2025: Book Fair</li>
+      <li>February 25, 2025: Author Talk</li>
+      <li>February 28, 2025: Study Skills Workshop</li>
+    </ul>
+
+  </div>
+</div>
+  
+  
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SMU Library</p>
+  </footer>
+
+  <!-- Link to external JavaScript -->
+
+  <script src="calendar.js"></script>
+</body>
+</html>
