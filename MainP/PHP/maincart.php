@@ -5,75 +5,19 @@
   <title>SMU Library</title>
   <link rel="icon" type="image/png" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Global Styles -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Cart Page Styles -->
-  <link rel="stylesheet" href="css files/cart.css">
+  <link rel="stylesheet" href="../CSS/cart.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-yHhbHhqJl9owqMxg2q7+Qx/XfXUoiVnq0l6v6JZ2Q4eUT7Y7+/2LZYzOw6QqF5q5cSKIYhK1jQBJbg2cJp+h5g==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src ="javascript/cart.js" async></script>
+        <script src ="../JS/cart.js" async></script>
 </head>
 <body>
 
 <!-- Header and Navigation -->
-<header>
-  <div class="nav-container">
-    <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
-    <nav>
-      <ul>
-        <li class="dropdown">
-          <a href="#">Books</a>
-          <ul class="dropdown-content">
-            <li><a href="borrowbook.html">Borrow a Book</a></li>
-            <li><a href="#">Return a Book</a></li>
-            <li><a href="#">Sell a Book</a></li>
-            <li><a href="#">Buy a Book</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Service</a>
-          <ul class="dropdown-content">
-            <li><a href="bookappointment.html">Book an Appointment</a></li>
-            <li><a href="reserveroom.html">Reserve Room</a></li>
-            <li><a href="requestlibrarian.html">Request A Librarian</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">News and Events</a>
-          <ul class="dropdown-content">
-            <li><a href="calendar.html">Latest News</a></li>
-            <li><a href="#">Promotions</a></li>
-            <li><a href="#">Support the Library</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">For You</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Student</a></li>
-            <li><a href="#">Military</a></li>
-            <li><a href="#">Public</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">About Us</a>
-          <ul class="dropdown-content">
-            <li><a href="team.html">Our Staff</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="location.html">Location</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="">My Account</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Sign in</a></li>
-            <li><a href="maincart.html">My Cart</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<?php include "header.php" ?>
 
 <!-- Main Content -->
 <section class="h-100 h-custom cart-section">

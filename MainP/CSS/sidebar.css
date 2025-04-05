@@ -1,0 +1,11 @@
+.side-bar .fixed
+{
+    width: 200px;
+}
+
+.side-bar .fixed
+{
+    position: fixed;
+    background: lightblue;
+    height: calc(100vh - 224.8px);
+}

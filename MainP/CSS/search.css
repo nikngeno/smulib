@@ -1,13 +1,21 @@
 /* search.css */
 
-.search-bar {
-    width: 100%;              
-    background-color: #e6edf5;
-    padding: 2rem;
-    border-bottom: 1px solid #ccc;
-    box-sizing: border-box;    
-    margin: 0;                
-  }
+.search-bar
+{
+  height: 100px;
+}
+
+.search-bar .fixed
+{
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  position: fixed;            
+  background-color: #e6edf5;
+  padding: 2rem;
+  border-bottom: 1px solid #ccc;
+  z-index: 1;
+}
 
   .search-bar h2 {
     margin-bottom: 0.5rem;
@@ -56,4 +64,3 @@
   .search-button:hover {
     background-color: #e87a00;
   }
-  

@@ -1,0 +1,67 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+header, .search-bar
+{
+    width: 100%;
+    height: 150px;
+}
+
+.grid-container
+{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto;
+}
+
+.content
+{
+    padding: 50px;
+}
+
+.table
+{
+    max-width: calc(100vw - 300px);
+    min-height: calc(100vh - 324.8px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto 80px;
+}
+
+.category
+{
+    background-color: coral;
+}
+
+.page-select
+{
+    background: lightblue;
+}
+
+.book-items
+{
+    background: rgb(237, 237, 237);
+    padding: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(100px, calc(100vh - 504.8px))
+}
+
+/* Everything related to the books*/
+
+img
+{
+    width: 85%;
+}
+
+.book
+{
+    text-align: center;
+    z-index: 100;
+}

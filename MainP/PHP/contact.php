@@ -6,7 +6,7 @@
   <title>SMU Library</title>
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
   <!-- Grid for placing form and opening hours side by side -->
   <style>
     .grid-container {
@@ -22,82 +22,7 @@
 <body>
 
   <!-- Header and Navigation -->
-  <header>
-    <div class="nav-container">
-      <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
-      <nav>
-        <ul>
-          <!-- Menu Item 1 -->
-          <li class="dropdown">
-            <a href="#">Books</a>
-            <ul class="dropdown-content">
-              <li><a href="borrowbook.html">Borrow a Book</a></li>
-              <li><a href="#">Return a Book</a></li>
-              <li><a href="#">Sell a Book</a></li>
-              <li><a href="#">Buy a Book</a></li>
-            </ul>
-          </li>
-
-          <!-- Menu Item 2 -->
-          <li class="dropdown">
-            <a href="#">Service</a>
-            <ul class="dropdown-content">
-              <li><a href="bookappointment.html">Book an Appointment</a></li>
-              <li><a href="reserveroom.html">Reserve Room</a></li>
-              <li><a href="requestlibrarian.html">Request A Librarian </a></li>
-            </ul>
-          </li>
-
-          <!-- Menu Item 3 -->
-          <li class="dropdown">
-            <a href="#">News and Events</a>
-            <ul class="dropdown-content">
-              <li><a href="calendar.html">Latest News</a></li>
-              <li><a href="#">Promotions</a></li>
-              <li><a href="#">Support the Library</a></li>
-            </ul>
-          </li>
-
-          <!-- Menu Item 4 -->
-          <li class="dropdown">
-            <a href="#">For You</a>
-            <ul class="dropdown-content">
-              <li><a href="#">Student</a></li>
-              <li><a href="#">Military</a></li>
-              <li><a href="#">Public</a></li>
-            </ul>
-          </li>
-
-          <!-- Menu Item 5 -->
-          <li class="dropdown">
-            <a href="#">About Us</a>
-            <ul class="dropdown-content">
-              <li><a href="team.html">Our Staff</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="location.html">Location</a></li>
-              <!--<li><a href="#">Sub Item 3</a></li> -->
-            </ul>
-          </li>
-             <!-- Menu Item 6 -->
-             <li class="dropdown">
-              <a href="">My Account</a>
-              <ul class="dropdown-content">
-                <li><a href="#">Sign in</a></li>
-                <li><a href="maincart.html">My Cart</a></li>
-              </ul>
-            </li>
-        </ul>
-      </nav>
-    </div>
-    <!--<div class="sign-in-container">
-      <p>Sign In</p>
-      <ul>
-        <li>My Profile</li>
-        <li>My Cart</li>
-        <li>Sign Out</li>
-      </ul>
-    </div>-->
-  </header>
+   <?php include "header.php" ?>
 
   <!-- Main Content Areas -->
   <main>
@@ -219,7 +144,7 @@
   </footer>
 
   <!-- Link to external JavaScript -->
-  <script src="script.js"></script>
+  <script src="../JS/script.js"></script>
 </body>
 
 </html>
