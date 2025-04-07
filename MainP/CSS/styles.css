@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    padding-top: 60px;
   }
   
   /* Header and Navigation */
@@ -189,6 +190,7 @@
     max-width: 1000px;
     margin: 2em auto;
     padding: 0 1em;
+    margin-top: 100px !important;
   }
   
   section {
@@ -225,8 +227,4 @@
     margin: 0 auto;
   }
   
-  html, body {
-    margin: 0;
-    padding: 0;
-    
-  }
+  
