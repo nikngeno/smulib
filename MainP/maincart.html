@@ -13,6 +13,13 @@
         integrity="sha512-yHhbHhqJl9owqMxg2q7+Qx/XfXUoiVnq0l6v6JZ2Q4eUT7Y7+/2LZYzOw6QqF5q5cSKIYhK1jQBJbg2cJp+h5g==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
         <script src ="JS/cart.js" async></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              updateCartTotal();
+              updatePaymentSummary();
+          });
+          </script>
+          
 </head>
 <body>
 
@@ -111,11 +118,11 @@
             </div>
             <div class="cart-col col-quantity">
               <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal();">
+                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
                   <i class="fas fa-minus"></i>
                 </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal();">
+                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
+                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
@@ -142,11 +149,11 @@
             </div>
             <div class="cart-col col-quantity">
               <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal();">
+                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
                   <i class="fas fa-minus"></i>
                 </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal();">
+                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
+                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
@@ -254,7 +261,7 @@
   <button type="button" class="btn btn-primary btn-block btn-lg">
     <div class="d-flex justify-content-between">
       <span>Checkout</span>
-      <span>$26.48</span>
+      <span id="checkout-total">$26.48</span>
     </div>
   </button>
 </div>
