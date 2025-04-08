@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 body {
   background-color: #f5f5dc;
   color: #ffffff;
@@ -248,7 +247,7 @@ input[type="number"] {
   width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;* Allow it to grow and shrink as needed */
+  align-items: flex-start; /* Allow it to grow and shrink as needed */
 }
 .payment-col.right {
   width: 30%;
@@ -315,4 +314,5 @@ body > div {
 
 .cart-col.col-product {
   justify-content: flex-start;
+}
 }

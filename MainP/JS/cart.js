@@ -37,7 +37,6 @@ function updateCartTotal() {
       // Get the unit price from a data attribute
       var unitPrice = parseFloat(priceP.getAttribute("data-unitprice"));
       if (isNaN(unitPrice)) {
-        // Fallback: extract from the text (not recommended if text is updated later)
         unitPrice = parseFloat(priceP.innerText.replace("$", "").trim());
       }
   
@@ -67,7 +66,6 @@ function updatePaymentSummary() {
       if (priceCols.length === 0) continue;
       var pElements = priceCols[0].getElementsByTagName("p");
       if (pElements.length === 0) continue;
-      // Assuming your original code updates the price in the first <p>
       var priceText = pElements[0].innerText;
       var rowTotal = parseFloat(priceText.replace("$", ""));
       if (!isNaN(rowTotal)) {
@@ -75,30 +73,26 @@ function updatePaymentSummary() {
       }
   }
 
-  // Example tax calculation (using a 10% tax rate here)
+  // Calculates tax and final total
   var taxRate = 0.1;
   var taxAmount = overallTotal * taxRate;
   var finalTotal = overallTotal + taxAmount;
 
-  // Update the payment summary section.
-  // Your HTML has three .price-row divs inside the payment container:
-  //   1. Subtotal row
-  //   2. Tax row
-  //   3. Total row
   var summaryRows = document.querySelectorAll(".payment-col.right .price-row");
   if (summaryRows.length >= 3) {
-      // Update Subtotal (first row, second <p> element)
+      // Update Subtotal 
       var subtotalP = summaryRows[0].getElementsByTagName("p")[1];
       subtotalP.innerText = "$" + overallTotal.toFixed(2);
 
-      // Update Tax (second row, second <p> element)
+      // Update Tax 
       var taxP = summaryRows[1].getElementsByTagName("p")[1];
       taxP.innerText = "$" + taxAmount.toFixed(2);
 
-      // Update Total (third row, second <p> element)
+      // Update Total 
       var totalP = summaryRows[2].getElementsByTagName("p")[1];
       totalP.innerText = "$" + finalTotal.toFixed(2);
   }
+  //Mirror the total in the checkout section
   var checkoutTotalEl = document.getElementById("checkout-total");
   if (checkoutTotalEl) {
     checkoutTotalEl.innerText = "$" + finalTotal.toFixed(2);

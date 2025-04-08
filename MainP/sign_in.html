@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMU Library</title>
+  <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="CSS/styles.css">
+
+  <!-- style for Meet the team page-->
+  <link rel="stylesheet" href="CSS/sign_in.css">
+</head>
+<body>
+
+  <!-- Header and Navigation -->
+  <header>
+    <div class="nav-container">
+      <h1><a href= "index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+      <nav>
+        <ul>
+          <!-- Menu Item 1 -->
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <ul class="dropdown-content">
+              <li><a href="borrowbook.html">Borrow a Book</a></li>
+              <li><a href="#">Return a Book</a></li>
+              <li><a href="#">Sell a Book</a></li>
+              <li><a href="#">Buy a Book</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 2 -->
+          <li class="dropdown">
+            <a href="#">Service</a>
+            <ul class="dropdown-content">
+              <li><a href="bookappointment.html">Book an Appointment</a></li>
+              <li><a href="reserveroom.html">Reserve  Room</a></li>
+              <li><a href="requestlibrarian.html">Request A Librarian </a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 3 -->
+          <li class="dropdown">
+            <a href="#">News and Events</a>
+            <ul class="dropdown-content">
+              <li><a href="calendar.html">Latest News</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Support the Library</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 4 -->
+          <li class="dropdown">
+            <a href="#">For You</a>
+            <ul class="dropdown-content">
+              <li><a href="#">Student</a></li>
+              <li><a href="#">Military</a></li>
+              <li><a href="#">Public</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu Item 5 -->
+          <li class="dropdown">
+            <a href="#">About Us</a>
+            <ul class="dropdown-content">
+              <li><a href="team.html">Our Staff</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="location.html">Location</a></li>
+              <!--<li><a href="#">Sub Item 3</a></li> -->
+            </ul>
+          </li>
+            <!-- Menu Item 6 -->
+            <li class="dropdown">
+              <a href="">My Account</a>
+              <ul class="dropdown-content">
+                <li><a href="sign_in.html">Sign in</a></li>
+                <li><a href="maincart.html">My Cart</a></li>
+              </ul>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  
+  </header>
+<!-- End of Header and Navigation -->
+  <br>
+ <!-- Main Content: Tab Headers and Tab Panes -->
+ <main>
+    <!-- Navigation Tab Headers -->
+    <ul class="nav" id="nav-tabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="tab-login" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">
+          Login
+        </a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab-register" href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">
+          Register
+        </a>
+      </li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div class="tab-content">
+      <!-- Login Tab Pane (visible by default) -->
+      <div class="tab-pane active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form>
+          <div class="form-group">
+            <label for="loginName">Email or Username</label>
+            <input type="email" id="loginName" class="form-control" placeholder="Email or username">
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="Password">
+          </div>
+          <div class="row">
+            <div class="col-half">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="loginCheck" checked>
+                <label class="form-check-label" for="loginCheck">Remember me</label>
+              </div>
+            </div>
+            <div class="col-half text-right">
+              <a href="#!">Forgot password?</a>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+        </form>
+      </div>
+
+      <!-- Register Tab Pane (hidden by default) -->
+      <div class="tab-pane" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form>
+          <div class="form-group">
+            <label for="registerName">Name</label>
+            <input type="text" id="registerName" class="form-control" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="registerUsername">Username</label>
+            <input type="text" id="registerUsername" class="form-control" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label for="registerEmail">Email</label>
+            <input type="email" id="registerEmail" class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="registerPassword">Password</label>
+            <input type="password" id="registerPassword" class="form-control" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="registerRepeatPassword">Repeat Password</label>
+            <input type="password" id="registerRepeatPassword" class="form-control" placeholder="Repeat password">
+          </div>
+          <div class="form-check text-center">
+            <input class="form-check-input" type="checkbox" id="registerCheck" checked>
+            <label class="form-check-label" for="registerCheck">
+              I have read and agree to the terms
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Sign up</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const tabs = document.querySelectorAll('.nav-link');
+        const panes = document.querySelectorAll('.tab-pane');
+
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // Remove active state from all tabs and panes
+            tabs.forEach(item => item.classList.remove('active'));
+            panes.forEach(pane => pane.classList.remove('active'));
+
+            // Activate the clicked tab and its corresponding pane
+            this.classList.add('active');
+            const paneId = this.getAttribute('href');
+            const activePane = document.querySelector(paneId);
+            if (activePane) {
+              activePane.classList.add('active');
+            }
+          });
+        });
+      });
+    </script>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SMU Library</p>
+  </footer>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

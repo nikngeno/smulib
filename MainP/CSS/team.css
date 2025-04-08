@@ -78,3 +78,12 @@ object-fit: contain;
     z-index: 1000;
     display: none; /* initially hidden */
   }
+.row{
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+}
+main{
+  margin-top: 20px;
+  background-color: rgb(250, 235, 215);
+}
