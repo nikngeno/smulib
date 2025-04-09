@@ -1,24 +1,24 @@
-/* Overall Page Styles */
-body {
+ /* Give the entire page a soft background */
+ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
     color: #333;
   }
   
-  /* Navigation Tabs */
+  /* Tabs container */
   .nav {
     list-style: none;
-    padding: 0;
+    padding-left: 0;
     display: flex;
     border-bottom: 2px solid #ddd;
     margin-bottom: 1rem;
-    background: #ececec;
+    background: #ececec; /* Light grey for the tab row */
   }
   
   .nav-item {
-    flex: 1;
     margin: 0;
+    flex: 1;
   }
   
   .nav-link {
@@ -28,7 +28,6 @@ body {
     color: #333;
     border: 1px solid transparent;
     border-bottom: none;
-    text-align: center;
   }
   
   .nav-link.active {
@@ -40,12 +39,13 @@ body {
     font-weight: bold;
   }
   
-  /* Tab Content */
+  /* Tab Content Wrapper */
   .tab-content {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 600px; /* You can adjust the width */
   }
   
+  /* Hide inactive tabs by default */
   .tab-pane {
     display: none;
   }
@@ -53,41 +53,38 @@ body {
     display: block;
   }
   
-  /* Updated Form Panel: Removed box-shadow */
+  /* The form-panel ensures each tab’s content has a white background and padding */
   .form-panel {
-    flex: 1;
     background-color: #fff;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    box-shadow: none; /* Ensure no shadows appear */
   }
   
-  /* Form Groups */
+  /* Form group: label on top, input below */
   .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   
   .form-group label {
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 6px;
     font-weight: bold;
     color: #555;
   }
   
-  /* Updated Input Field Styling */
+  /* Inputs */
   .form-control {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-shadow: none; /* Remove any default input shadows */
   }
   
+  /* Remove any default shadow or outline from older code */
   .form-control:focus {
     outline: none;
-    border-color: #80bdff;
-    box-shadow: none; /* Remove focus shadow */
+    border-color: #80bdff; /* Light blue focus color */
   }
   
   /* Checkboxes */
@@ -100,7 +97,7 @@ body {
     margin-right: 5px;
   }
   
-  /* Row and Column Layout Helpers */
+  /* Layout for small columns (Remember me / Forgot password?) */
   .row {
     display: flex;
     justify-content: space-between;
@@ -110,13 +107,14 @@ body {
   
   .col-half {
     width: 48%;
+    display: inline-block;
   }
   
   .text-right {
     text-align: right;
   }
   
-  /* Button Styles */
+  /* Buttons */
   .btn {
     display: inline-block;
     padding: 10px;
@@ -141,7 +139,6 @@ body {
     width: 100%;
   }
   
-  /* Optional Spacing Utilities */
   .mt-2 {
     margin-top: 0.5rem;
   }
@@ -149,27 +146,3 @@ body {
   .mb-4 {
     margin-bottom: 1.5rem;
   }
-  /* Force all form panels and inputs to have NO shadow or gray background */
-.form-panel,
-.form-panel * {
-  background-color: #fff !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-}
-
-/* Specifically target .form-control or input fields that might still have a gray background */
-.form-control,
-.form-control:focus,
-input[type="text"],
-input[type="email"],
-input[type="password"],
-select,
-textarea {
-  background-color: #fff !important;
-  box-shadow: none !important;
-  -webkit-box-shadow: none !important;
-  -moz-box-shadow: none !important;
-  border: 1px solid #ccc !important; /* Ensures a simple light gray border */
-  outline: none !important;
-}
