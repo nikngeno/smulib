@@ -5,86 +5,21 @@
   <title>SMU Library</title>
   <link rel="icon" type="image/png" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Global Styles -->
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Cart Page Styles -->
-  <link rel="stylesheet" href="CSS/cart.css">
+  <link rel="stylesheet" href="../CSS/cart.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-yHhbHhqJl9owqMxg2q7+Qx/XfXUoiVnq0l6v6JZ2Q4eUT7Y7+/2LZYzOw6QqF5q5cSKIYhK1jQBJbg2cJp+h5g==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src ="JS/cart.js" async></script>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              updateCartTotal();
-              updatePaymentSummary();
-          });
-          </script>
-          
+        <script src ="../JS/cart.js" async></script>
 </head>
 <body>
 
 <!-- Header and Navigation -->
-<header>
-  <div class="nav-container">
-    <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
-    <nav>
-      <ul>
-        <li class="dropdown">
-          <a href="#">Books</a>
-          <ul class="dropdown-content">
-            <li><a href="borrowbook.html">Borrow a Book</a></li>
-            <li><a href="#">Return a Book</a></li>
-            <li><a href="#">Sell a Book</a></li>
-            <li><a href="#">Buy a Book</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">Service</a>
-          <ul class="dropdown-content">
-            <li><a href="bookappointment.html">Book an Appointment</a></li>
-            <li><a href="reserveroom.html">Reserve Room</a></li>
-            <li><a href="requestlibrarian.html">Request A Librarian</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">News and Events</a>
-          <ul class="dropdown-content">
-            <li><a href="calendar.html">Latest News</a></li>
-            <li><a href="#">Promotions</a></li>
-            <li><a href="#">Support the Library</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">For You</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Student</a></li>
-            <li><a href="#">Military</a></li>
-            <li><a href="#">Public</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#">About Us</a>
-          <ul class="dropdown-content">
-            <li><a href="team.html">Our Staff</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="location.html">Location</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="">My Account</a>
-          <ul class="dropdown-content">
-            <li><a href="sign_in.html">Sign in</a></li>
-            <li><a href="maincart.html">My Cart</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<?php include "header.php" ?>
 
 <!-- Main Content -->
- <main>
-<br>
 <section class="h-100 h-custom cart-section">
   <div class="container-fluid h-100 py-5">
     <div class="row h-100">
@@ -99,7 +34,7 @@
             <div class="cart-col col-format">Format</div>
             <div class="cart-col col-quantity">Quantity</div>
             <div class="cart-col col-price">Price</div>
-            <div class="cart-col col-remove"></div>
+            <div class="cart-col col-remove">Remove</div>
           </div>
           
           <!-- Row 1 -->
@@ -118,11 +53,11 @@
             </div>
             <div class="cart-col col-quantity">
               <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
+                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal();">
                   <i class="fas fa-minus"></i>
                 </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
+                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal();">
+                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal();">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
@@ -149,11 +84,11 @@
             </div>
             <div class="cart-col col-quantity">
               <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
+                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal();">
                   <i class="fas fa-minus"></i>
                 </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
+                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal();">
+                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal();">
                   <i class="fas fa-plus"></i>
                 </button>
               </div>
@@ -167,8 +102,7 @@
           </div>
           <!-- Repeat rows as needed -->
         </div>
-        <br>
-        <br>
+        
 
         <!-- PAYMENT CARD SECTION -->
         <div class="card mx-auto shadow-2-strong mb-5" style="width: 100%; border-radius: 16px;">
@@ -261,7 +195,7 @@
   <button type="button" class="btn btn-primary btn-block btn-lg">
     <div class="d-flex justify-content-between">
       <span>Checkout</span>
-      <span id="checkout-total">$26.48</span>
+      <span>$26.48</span>
     </div>
   </button>
 </div>
@@ -276,7 +210,7 @@
     </div>
   </div>
 </section>
-</main>
+
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 SMU Library</p>

@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
 body {
   background-color: #f5f5dc;
   color: #ffffff;
@@ -20,7 +19,8 @@ body {
 /* Cart Section */
 .cart-section {
   min-height: calc(100vh - 70px); /* Footer height */
-  padding-bottom: 70px; /* Ensure content isn't hidden behind the footer */
+  padding-bottom: 70px; 
+  margin-top: 60px;/* Ensure content isn't hidden behind the footer */
 }
 
 /* TABLE STYLES */
@@ -241,10 +241,13 @@ input[type="number"] {
 
 /* Custom Payment Column Widths */
 .payment-col.left {
-  width: 40%;
+  width: 30%;
 }
 .payment-col.middle {
-  width: 30%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Allow it to grow and shrink as needed */
 }
 .payment-col.right {
   width: 30%;
@@ -257,7 +260,7 @@ body > div {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  padding: 0 !important;
+ 
 }
 .price-row p:last-child {
   text-align: right;
@@ -311,4 +314,5 @@ body > div {
 
 .cart-col.col-product {
   justify-content: flex-start;
+}
 }

@@ -12,12 +12,16 @@
     background: #f5f5dc;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
   }
   
   /* Header and Navigation */
   header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    right: 0;
+    left: 0;
     background-color: #a24943;
     color: #fff;
     padding: 1em;
@@ -186,6 +190,7 @@
     max-width: 1000px;
     margin: 2em auto;
     padding: 0 1em;
+    margin-top: 100px !important;
   }
   
   section {
@@ -198,8 +203,8 @@
   
   /* Footer */
   footer {
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
     width: 100%;
     background-color: #726565;
     color: #fff;
@@ -209,14 +214,17 @@
     clear: both;
   }
   .table-container {
-    margin-left: 200px; /* matches .sidebar’s width */
+    margin-left: 200px;
+    margin-top: 284px;
+    flex: 1;
     padding: 1rem;
     box-sizing: border-box;
     /* Remove any clear: both; or margin-top if it pushes content down. */
   }
-  
-  html, body {
-    margin: 0;
-    padding: 0;
-    
+
+  table
+  {
+    margin: 0 auto;
   }
+  
+  

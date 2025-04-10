@@ -5,13 +5,12 @@
   <title>SMU Library</title>
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
   <!-- New stylesheet for your books layout -->
-  <link rel="stylesheet" href="book.css">
-  <link rel="stylesheet" href="search.css">
-  <link rel="stylesheet" href="sidebar.css">
-  <script src ="javascript/cart.js" async></script>
-  <script src ="javascript/javascriptCalendar.js" async></script>
+  <link rel="stylesheet" href="../CSS/book.css">
+  <link rel="stylesheet" href="../CSS/search.css">
+  <link rel="stylesheet" href="../CSS/sidebar.css">
+  <script src ="../JS/cart.js" async></script>
 
   <style>
     .top-header {
@@ -65,8 +64,6 @@
     }
 
     .weekdays {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
       margin: 0;
       padding: 10px 0;
       background-color: #a7a7a7;
@@ -80,15 +77,12 @@
     }
 
     .days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
       padding: 10px 0;
       background: #ffffff;
       margin: 0;
     }
 
-
-    /*<!-- .days li {
+    .days li {
       list-style-type: none;
       display: inline-block;
       width: 13.6%;
@@ -102,16 +96,16 @@
       padding: 5px;
       background: #ba0c2f;
       color: #ffffff !important
-    } -->*/
+    }
 
-  .calendar-body {
-    width: 500px;
-  }
+    .calendar-body {
+      width: 500px;
+    }
 
     .calendar-wrap {
       display: flex;
       justify-content: center;
-      gap : 300px;
+      gap : 70px;
       margin: 50px auto;
     }
 
@@ -146,25 +140,29 @@
       .weekdays li, .days li {width: 12.2%;}
     }
   </style>
- 
-    <!-- Calendar -->
-    <!--/*<header class="top-header">
-      <h1>SMU Library Calendar</h1>
+</head>
+<body>
+  <!-- Header and Navigation -->
+  <?php include "header.php" ?>
+
+  <!-- Calendar -->
+  <!--/*<header class="top-header">
+    <h1>SMU Library Calendar</h1>
   </header>*/-->
   <div class = "calendar-wrap"> 
     <div class="calendar-body">
       <div class="month">      
         <ul>
-          <li class="prev"><button type="button" id= "prevButton" >&#10094;</button></li>
-          <li class="next"><button type="button" id="nextButton">&#10095;</button></li>
-          <li id="monthYear">
+          <li class="prev"><button type="button">&#10094;</button></li>
+          <li class="next"><button type="button">&#10095;</button></li>
+          <li>
             February<br>
             <span style="font-size:18px">2025</span>
           </li>
         </ul>
       </div>
       
-      <ul class="weekdays" id = "dates">
+      <ul class="weekdays">
         <li>Sunday</li>
         <li>Monday</li>
         <li>Tuesday</li>
@@ -174,8 +172,8 @@
         <li>Saturday</li>
       </ul>
       
-      <ul class="days" id="dates">   
-        <!-- <li>1</li>
+      <ul class="days">  
+        <li>1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
@@ -205,9 +203,9 @@
         <li>28</li>
         <li>29</li>
         <li>30</li>
-        <li>31</li> -->
-       </ul> 
-     </div> 
+        <li>31</li>
+      </ul>
+    </div>
     <div class = "calendar-events">
       <h2>Upcoming Events</h2>
       <div class="event-item">
@@ -264,5 +262,8 @@
     <p>&copy; 2025 SMU Library</p>
   </footer>
 
+  <!-- Link to external JavaScript -->
+
+  <script src="../JS/calendar.js"></script>
 </body>
 </html>
