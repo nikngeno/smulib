@@ -19,36 +19,43 @@ const updateCalendar = () => {
     const lastDay = new Date(currentYear, currentMonth + 1, 0);
 
     const totalDays = lastDay.getDate();           // Total number of days in the current month
-    const firstDayIndex = firstDay.getDay();       // Day index of first visible date in calendar grid (0=Sunday, 6=Saturday)
+    const firstDayIndex = (firstDay.getDay() + 1) % 7;       // Day index of first visible date in calendar grid (0=Sunday, 6=Saturday)
     const lastDayIndex = lastDay.getDay();         // Day index of the last day of the month
 
     // Format and display the current month and year (e.g., "April 2025")
     const monthYearString = currentDate.toLocaleString("default", { month: "long", year: "numeric" });
     monthYearElement.textContent = monthYearString;
+    datesElement.innerHTML = ""; // Clear previous dates
 
-    let datesHtml = "";
+
 
     // Add trailing dates from the previous month to fill the first row of the calendar
     for (let i = firstDayIndex; i > 0; i--) {
         const prevDate = new Date(currentYear, currentMonth, 0 - i + 1);
-        datesHtml += `<div class="date inactive">${prevDate.getDate()}</div>`;
+        datesElement.insertAdjacentHTML("beforeend", `<div class="date inactive">${prevDate.getDate()}</div>`); // Add leading dates from the previous month
     }
 
     // Add current month's dates and highlight today as active
     for (let i = 1; i <= totalDays; i++) {
         const date = new Date(currentYear, currentMonth, i);
-        const activeClass = date.toDateString() === new Date().toDateString() ? "active" : "";
-        datesHtml += `<div class="date ${activeClass}">${i}</div>`;
+        let dateDiv = document.createElement("div");
+        dateDiv.classList.add("date");
+
+        if (date.toDateString() === new Date().toDateString()) {
+            dateDiv.classList.add("active"); // Highlight today's date
+        }
+
+        dateDiv.textContent = i; // Set the date number
+        dateDiv.addEventListener("click", () => { dateClicked(date); }); // Add click event listener to each date
+
+        datesElement.appendChild(dateDiv); // Append the date div to the calendar
     }
     
     // Add leading dates from the next month to complete the last row of the calendar
-    for (let i = 1; i <= 7 - lastDayIndex; i++) {
+    for (let i = 1; i <= 6 - lastDayIndex; i++) {
         const nextDate = new Date(currentYear, currentMonth + 1, i);
-        datesHtml += `<div class="date inactive">${nextDate.getDate()}</div>`;
+        datesElement.insertAdjacentHTML("beforeend", `<div class="date inactive">${nextDate.getDate()}</div>`); // Add trailing dates from the next month
     }
-
-    // Update the calendar's date grid in the DOM
-    datesElement.innerHTML = datesHtml;
 }
 
 // Add click event listeners to navigate between months
@@ -62,8 +69,11 @@ nextButton.addEventListener("click", () => {
     updateCalendar(); // Refresh the calendar view
 });
 
+function dateClicked(date) {
+    alert("You clicked on " + date); // Alert the clicked date //function to handle date clicks
+}
+
 // Initial call to display the calendar when the page loads
 updateCalendar();
 console.log("Calendar initialized for " + currentDate.toLocaleString("default", { month: "long", year: "numeric" }));
 console.log(5 + 5); // Example of a simple calculation
-
