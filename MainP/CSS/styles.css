@@ -1,230 +1,192 @@
 /* Reset some default browser styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Basic body styling */
-  body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background: #f5f5dc;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    padding-top: 60px;
-  }
-  
-  /* Header and Navigation */
-  header {
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: #a24943;
-    color: #fff;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    z-index: 999;
-  }
-  
-  header h1 {
-    display: inline-block;
-    margin-right: 2em;
-    vertical-align: middle;
-  }
-
-  /* Content Container */
-  .content-container
-  {
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 70%;
-    margin: 0 auto;
-  }
-  /* updated navigarion */
-  /* Remove or comment out the old float/position lines */
-/* nav ul li {
-   position: fixed; 
-   position: relative; 
-   float: left; 
-   margin-right: 1em;
-} */
-
-
-
-  /* Top-level navigation menu */
-  nav ul {
-    display: inline-block;
-    list-style: none;
-    vertical-align: middle;
-  }
-  
-  nav ul li {
-    position: fixed;
-    position: relative;
-    float: left;
-    margin-right: 1em;
-  }
-  
-  /* Menu links */
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    padding: 8px 12px;
-    display: block;
-  }
-  
-  /* Dropdown containers */
-  .dropdown-content {
-    display: none; /* Hidden by default */
-    position: absolute;
-    background-color: #444;
-    min-width: 140px;
-    z-index: 999;
-    overflow: hidden;
-  }
-  
-  .dropdown-content li {
-    float: none; /* Sub-menu items stack vertically */
-    width: 100%;
-  }
-  
-  /* Dropdown items styling */
-  .dropdown-content li a {
-    padding: 8px 12px;
-    width: 100%;
-  }
-
-  .dropdown-content li a:hover
-  {
-    background: #87ceeb;
-  }
-  
-  /* Hover to open the dropdown */
-  .dropdown:hover .dropdown-content {
-    top: 40px;
-    display: block;
-    animation: dropdown-animation 500ms ease-in;
-  }
-
-  .dropdown .dropdown-content
-  {
-    top: 20px;
-    transition-property: top;
-    transition-property: display;
-    transition-delay: 1s;
-  }
-  .right {
-    float: right;
-  }
-  
-  
-  /* Slideshow container */
-  .slideshow-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 2em auto 0; /* Center the slideshow */
-  }
-  
-  /* Each slide */
-  .slide {
-    display: none; /* Hide all slides by default */
-  }
-  
-  .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-/* Animation for nav dropdown */
-@keyframes dropdown-animation
-{
-  0% 
-  {
-    max-height: 0;
-  }
-  100%
-  {
-    max-height: 1000px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  /* Animation for slides (fade in) */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: 0.4;}
-    to {opacity: 1;}
-  }
-  
-  /* Dots (indicator for current slide) */
-  .dots-wrapper {
-    text-align: center;
-    margin-top: 1em;
-  }
-  
-  .dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 3px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-  }
-  
-  .active,
-  .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Main content styling */
-  main {
-    max-width: 1000px;
-    margin: 2em auto;
-    padding: 0 1em;
-    margin-top: 100px !important;
-  }
-  
-  section {
-    margin-bottom: 2em;
-  }
-  
-  section h2 {
-    margin-bottom: 0.5em;
-  }
-  
-  /* Footer */
-  footer {
-    /* position: fixed;
-    bottom: 0; */
-    width: 100%;
-    background-color: #726565;
-    color: #fff;
-    text-align: center;
-    padding: 1em;
-    margin-top: 2em;
-    clear: both;
-  }
-  .table-container {
-    margin-left: 200px;
-    margin-top: 284px;
-    flex: 1;
-    padding: 1rem;
-    box-sizing: border-box;
-    /* Remove any clear: both; or margin-top if it pushes content down. */
-  }
+/* Basic body styling */
+html, body {
+  height: 100%; /* Ensure full viewport height */
+}
 
-  table
-  {
-    margin: 0 auto;
-  }
-  
-  
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #f5f5dc;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px; /* Header offset */
+  overflow-x: hidden;
+}
+
+/* Header and Navigation */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #a24943;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  z-index: 999;
+}
+
+header h1 {
+  display: inline-block;
+  margin-right: 2em;
+  vertical-align: middle;
+}
+
+/* Content Container */
+.content-container {
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Top-level navigation menu */
+nav ul {
+  display: inline-block;
+  list-style: none;
+  vertical-align: middle;
+}
+
+nav ul li {
+  position: relative;
+  float: left;
+  margin-right: 1em;
+}
+
+/* Menu links */
+nav a {
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 12px;
+  display: block;
+}
+
+/* Dropdown containers */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #444;
+  min-width: 140px;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.dropdown-content li {
+  float: none;
+  width: 100%;
+}
+
+.dropdown-content li a {
+  padding: 8px 12px;
+  width: 100%;
+}
+
+.dropdown-content li a:hover {
+  background: #87ceeb;
+}
+
+/* Hover to open the dropdown */
+.dropdown:hover .dropdown-content {
+  top: 40px;
+  display: block;
+  animation: dropdown-animation 500ms ease-in;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 2em auto 0;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes dropdown-animation {
+  0% { max-height: 0; }
+  100% { max-height: 1000px; }
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.dots-wrapper {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Main content styling */
+main {
+  flex: 1; /* Fill available space */
+  width: 100%;
+  max-width: 1000px;
+  margin: 100px auto 0 auto;
+  padding: 0 1em;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+section h2 {
+  margin-bottom: 0.5em;
+}
+
+/* Table container adjustments */
+.table-container {
+  flex: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+table {
+  margin: 0 auto;
+}
+
+/* Footer placed at the bottom */
+footer {
+  background-color: #726565;
+  color: #fff;
+  text-align: center;
+  padding: 1em;
+  margin-top: auto; /* Pushes footer down */
+  width: 100%;
+}
