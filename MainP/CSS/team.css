@@ -1,5 +1,4 @@
 html {
-<<<<<<< HEAD
   box-sizing: border-box;
 }
 
@@ -7,39 +6,25 @@ html {
   box-sizing: inherit;
 }
 
+/* Make sure the row takes full width and removes any unnecessary padding/margin */
 .row {
-  margin-bottom: 20px;
-  width: 100%;
   display: flex;
-  flex-wrap: wrap; /* ensures cards wrap to next line if needed */
-  padding: 0;
+  flex-wrap: wrap;
+  width: 100%;
   margin: 0;
+  padding: 0;
 }
 
+/* Columns (cards) will flexibly fill the space */
 .column {
-  flex: 1; /* ensures equal-width columns */
+  flex: 1 1 calc(33.333% - 16px); /* Adjusted width for spacing */
   padding: 8px;
-  margin-bottom: 16px;
+  display: flex;
 }
 
 @media screen and (max-width: 650px) {
-=======
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  
-.header-position-container {
-    width: 100%;
-    height: 124.8px;
-  }
-
->>>>>>> 64a0a5179f119e162eefe01b47b2037e77e985b0
   .column {
-    flex: 100%; /* cards will fill full width on small screens */
-    display: block;
+    flex: 1 1 100%; /* ensures cards take full width on small screens */
   }
 }
 
@@ -47,10 +32,10 @@ html {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   transition: 0.3s;
   padding: 16px;
-  border: 1px solid black; /* clearly defined black border */
-  height: 100%; /* Ensures uniform height */
+  border: 1px solid black;
   display: flex;
   flex-direction: column;
+  width: 100%; /* Ensure card itself fills the column entirely */
 }
 
 .card img {
@@ -71,15 +56,10 @@ html {
   border: none;
   outline: 0;
   padding: 8px;
-  margin-top: auto; /* pushes button to the bottom of card */
+  margin-top: auto;
   color: white;
   background-color: black;
   cursor: pointer;
-}
-
-.button * {
-  text-decoration: none;
-  color: inherit;
 }
 
 .button:hover {
@@ -101,4 +81,5 @@ html {
 main {
   margin-top: 20px;
   background-color: #f5f5dc;
+  width: 100%; /* Ensuring main container also takes full width */
 }
