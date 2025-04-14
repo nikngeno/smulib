@@ -6,19 +6,26 @@
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/styles.css">
-
-  <!-- style for Meet the team page-->
+  <!-- Style for the sign in page -->
   <link rel="stylesheet" href="CSS/sign_in.css">
+  <style>
+    /* Inline styling to make error messages in red */
+    .error {
+      color: red;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header and Navigation -->
   <header>
     <div class="nav-container">
-      <h1><a href= "index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+      <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
       <nav>
         <ul>
-          <!-- Menu Item 1 -->
+          <!-- Menu Items -->
           <li class="dropdown">
             <a href="#">Books</a>
             <ul class="dropdown-content">
@@ -28,18 +35,14 @@
               <li><a href="#">Buy a Book</a></li>
             </ul>
           </li>
-
-          <!-- Menu Item 2 -->
           <li class="dropdown">
             <a href="#">Service</a>
             <ul class="dropdown-content">
               <li><a href="bookappointment.html">Book an Appointment</a></li>
               <li><a href="reserveroom.html">Reserve  Room</a></li>
-              <li><a href="requestlibrarian.html">Request A Librarian </a></li>
+              <li><a href="requestlibrarian.html">Request A Librarian</a></li>
             </ul>
           </li>
-
-          <!-- Menu Item 3 -->
           <li class="dropdown">
             <a href="#">News and Events</a>
             <ul class="dropdown-content">
@@ -48,8 +51,6 @@
               <li><a href="#">Support the Library</a></li>
             </ul>
           </li>
-
-          <!-- Menu Item 4 -->
           <li class="dropdown">
             <a href="#">For You</a>
             <ul class="dropdown-content">
@@ -58,40 +59,34 @@
               <li><a href="#">Public</a></li>
             </ul>
           </li>
-
-          <!-- Menu Item 5 -->
           <li class="dropdown">
             <a href="#">About Us</a>
             <ul class="dropdown-content">
               <li><a href="team.html">Our Staff</a></li>
               <li><a href="contact.html">Contact Us</a></li>
               <li><a href="location.html">Location</a></li>
-              <!--<li><a href="#">Sub Item 3</a></li> -->
             </ul>
           </li>
-            <!-- Menu Item 6 -->
-            <li class="dropdown">
-              <a href="">My Account</a>
-              <ul class="dropdown-content">
-                <li><a href="sign_in.html">Sign in</a></li>
-                <li><a href="maincart.html">My Cart</a></li>
-              </ul>
-            </li>
+          <li class="dropdown">
+            <a href="">My Account</a>
+            <ul class="dropdown-content">
+              <li><a href="sign_in.html">Sign in</a></li>
+              <li><a href="maincart.html">My Cart</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
-  
   </header>
-<!-- End of Header and Navigation -->
+  <!-- End of Header and Navigation -->
   <br>
- <!-- Main Content: Tab Headers and Tab Panes -->
- <!-- Main Content -->
- <main>
+  <!-- Main Content -->
+  <main>
     <p align="center" style="font-family: Helvetica, Arial, sans-serif; font-size: 24px; color: #030303;">
         <strong>Login or Create an Account to get more services</strong>
-      </p>
+    </p>
     <br>
-    <!-- Navigation tabs -->
+    <!-- Navigation Tabs -->
     <ul class="nav" id="nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
         <a class="nav-link active" id="tab-login" href="#pills-login" role="tab"
@@ -102,10 +97,9 @@
            aria-controls="pills-register" aria-selected="false">Register</a>
       </li>
     </ul>
-
-    <!-- Tab content -->
+    <!-- Tab Content -->
     <div class="tab-content">
-      <!-- Login tab -->
+      <!-- Login Tab -->
       <div class="tab-pane active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
         <form class="form-panel">
           <div class="form-group">
@@ -133,9 +127,10 @@
           </div>
         </form>
       </div>
-
-      <!-- Register tab -->
+      <!-- Register Tab -->
       <div class="tab-pane" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <!-- Error container: displays error messages -->
+        <div id="errorMessage"></div>
         <form class="form-panel" action="http://localhost:8080/smulib/MainP/PHP/register.php" method="POST">
           <div class="form-group">
             <label for="registerName">Full Name</label>
@@ -168,40 +163,44 @@
       </div>
     </div>
   </main>
-
-    <!-- JavaScript for Tab Switching -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        const tabs = document.querySelectorAll('.nav-link');
-        const panes = document.querySelectorAll('.tab-pane');
-
-        tabs.forEach(tab => {
-          tab.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Remove active state from all tabs and panes
-            tabs.forEach(item => item.classList.remove('active'));
-            panes.forEach(pane => pane.classList.remove('active'));
-
-            // Activate the clicked tab and its corresponding pane
-            this.classList.add('active');
-            const paneId = this.getAttribute('href');
-            const activePane = document.querySelector(paneId);
-            if (activePane) {
-              activePane.classList.add('active');
-            }
-          });
+  <!-- JavaScript for Tab Switching -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const tabs = document.querySelectorAll('.nav-link');
+      const panes = document.querySelectorAll('.tab-pane');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+          e.preventDefault();
+          tabs.forEach(item => item.classList.remove('active'));
+          panes.forEach(pane => pane.classList.remove('active'));
+          this.classList.add('active');
+          const paneId = this.getAttribute('href');
+          const activePane = document.querySelector(paneId);
+          if (activePane) {
+            activePane.classList.add('active');
+          }
         });
       });
-    </script>
-
+    });
+  </script>
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 SMU Library</p>
   </footer>
-
-  <!-- Link to external JavaScript -->
-  <script src="script.js"></script>
+  <!-- JavaScript to display error message in red only after signup -->
+  <script>
+    window.onload = function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var error = urlParams.get('error');
+      if (error === 'PasswordsDontMatch') {
+        alert('Passwords do not match!');
+        // Remove the query string so the error alert only shows once
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+    };
+  </script>
   
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

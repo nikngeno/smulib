@@ -48,7 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $registerRepeatPassword = htmlspecialchars($_POST['registerRepeatPassword']);
 
     if ($registerPassword !== $registerRepeatPassword) {
-        die("Passwords do not match!");
+        header("Location: http://localhost:8080/smulib/MainP/sign_in.html?error=PasswordsDontMatch");
+        exit();
+
     }
     $hashedPassword = password_hash($registerPassword, PASSWORD_DEFAULT);
 
