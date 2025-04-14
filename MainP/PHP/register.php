@@ -47,9 +47,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $registerPassword = htmlspecialchars($_POST['registerPassword']);
     $registerRepeatPassword = htmlspecialchars($_POST['registerRepeatPassword']);
 
+    if ($registerPassword !== $registerRepeatPassword) {
+        die("Passwords do not match!");
+    }
+    $hashedPassword = password_hash($registerPassword, PASSWORD_DEFAULT);
+
     // Insert data into the contact_us table
-    $stmt = $conn->prepare("INSERT INTO users (FullName,UserName,Email,Password,PasswordRepeat) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $registerName, $registerUsername, $registerEmail, $registerPassword, $registerRepeatPassword);
+    $stmt = $conn->prepare("INSERT INTO users (FullName,UserName,Email,Password) VALUES (?, ?, ?, ?)");
+    if ($stmt === false) {
+        die("Prepare failed: " . $conn->error);
+    }
+    $stmt->bind_param("ssss", $registerName, $registerUsername, $registerEmail, $hashedPassword);
 
     if ($stmt->execute()) {
         // Redirect back to the form with a success message
