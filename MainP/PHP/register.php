@@ -52,6 +52,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
     }
+    // Check if user with same email or username already exists
+    $checkUserStmt = $conn->prepare("SELECT UserId FROM users WHERE Email = ? OR UserName = ?");
+    if ($checkUserStmt === false) {
+        die("Prepare failed: " . $conn->error);
+    }
+    $checkUserStmt->bind_param("ss", $registerEmail, $registerUsername);
+    $checkUserStmt->execute();
+    $result = $checkUserStmt->get_result();
+    if ($result->num_rows > 0) {
+        // Redirect back with an error parameter indicating user exists
+        header("Location: http://localhost:8080/smulib/MainP/sign_in.html?error=UserExists");
+        exit();
+    }
+    $checkUserStmt->close();
+
+    // Hash the password
     $hashedPassword = password_hash($registerPassword, PASSWORD_DEFAULT);
 
     // Insert data into the contact_us table

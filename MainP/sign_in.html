@@ -194,11 +194,15 @@
       var error = urlParams.get('error');
       if (error === 'PasswordsDontMatch') {
         alert('Passwords do not match!');
-        // Remove the query string so the error alert only shows once
+        // Remove the parameter so the alert does not persist on refresh
+        window.history.replaceState(null, "", window.location.pathname);
+      } else if (error === 'UserExists') {
+        alert('A user with that email or username already exists!');
         window.history.replaceState(null, "", window.location.pathname);
       }
     };
   </script>
+  
   
   <!-- External JavaScript -->
   <script src="script.js"></script>
