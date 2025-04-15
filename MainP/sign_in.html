@@ -89,8 +89,8 @@
     <!-- Navigation Tabs -->
     <ul class="nav" id="nav-tabs" role="tablist">
       <li class="nav-item" role="presentation">
-        <a class="nav-link active" id="tab-login" href="#pills-login" role="tab"
-           aria-controls="pills-login" aria-selected="true">Login</a>
+        <a class="nav-link active" id="tab-login" href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true" onclick="return false;">Login</a>
+
       </li>
       <li class="nav-item" role="presentation">
         <a class="nav-link" id="tab-register" href="#pills-register" role="tab"
@@ -101,14 +101,14 @@
     <div class="tab-content">
       <!-- Login Tab -->
       <div class="tab-pane active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-        <form class="form-panel">
+        <form class="form-panel" action="http://localhost:8080/smulib/MainP/PHP/login.php" method="POST">
           <div class="form-group">
             <label for="loginName">Email or Username</label>
-            <input type="text" id="loginName" class="form-control" placeholder="Email or username">
+            <input type="text" id="loginName" name = "loginName" class="form-control" placeholder="Email or username">
           </div>
           <div class="form-group">
             <label for="loginPassword">Password</label>
-            <input type="password" id="loginPassword" class="form-control" placeholder="Password">
+            <input type="password" id="loginPassword" name = "Password" class="form-control" placeholder="Password">
           </div>
           <div class="row">
             <div class="col-half">
