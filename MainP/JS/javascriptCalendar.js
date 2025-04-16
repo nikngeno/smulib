@@ -71,6 +71,18 @@ nextButton.addEventListener("click", () => {
 
 function dateClicked(date) {
     alert("You clicked on " + date); // Alert the clicked date //function to handle date clicks
+    fetch("DBQueries/getcalendarevents.php")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data); // Handle the data received from the server
+            // You can update the UI or perform other actions with the data here
+
+        });
 }
 
 // Initial call to display the calendar when the page loads
