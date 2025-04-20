@@ -20,8 +20,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Password = $_POST['Password'] ?? '';
 
     // Validate input
-    echo "Submitted Input: " . $input . "<br>";
-    echo "Submitted Password: " . $Password . "<br>";
+    //echo "Submitted Input: " . $input . "<br>";
+    //echo "Submitted Password: " . $Password . "<br>";
 
     // Prepare the SQL statement
     $stmt = $conn->prepare("SELECT UserId, UserName, Email, Password FROM users WHERE UserName = ? OR Email = ?");

@@ -7,6 +7,7 @@
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/styles.css">
   <!-- New stylesheet for your books layout -->
+   <link rel="stylesheet" href="CSS/bookwrapper.css">
   <link rel="stylesheet" href="CSS/book.css">
   <link rel="stylesheet" href="CSS/search.css">
   <link rel="stylesheet" href="CSS/sidebar.css">
@@ -17,7 +18,7 @@
   <!-- Header and Navigation -->
   <header>
     <div class="nav-container">
-      <h1><a href= "index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+      <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
       <nav>
         <ul>
           <!-- Menu Item 1 -->
@@ -36,7 +37,7 @@
             <a href="#">Service</a>
             <ul class="dropdown-content">
               <li><a href="bookappointment.html">Book an Appointment</a></li>
-              <li><a href="reserveroom.html">Reserve  Room</a></li>
+              <li><a href="reserveroom.html">Reserve Room</a></li>
               <li><a href="requestlibrarian.html">Request A Librarian </a></li>
             </ul>
           </li>
@@ -82,43 +83,49 @@
         </ul>
       </nav>
     </div>
-  
+   
   </header>
-
   
     <!-- Main Content Areas -->
     
      <!-- Use this section to update code for borrowing books-->
 <!-- SEARCH BAR SECTION (uses styles from search.css) -->
-<section class="search-bar">
-  <h2>Search the Library Catalog</h2>
 
-  <form action="PHP/borrowbook.php" method="GET" class="search-form">
-    
-    <!-- Search type dropdown (Keyword, Title, Author, etc.) -->
-    <label for="search-type" class="sr-only">Search Type</label>
-    <select id="search-type" name="search-type">
-      <option value="keyword">Keyword</option>
-      <option value="title">Title</option>
-      <option value="author">Author</option>
-      <option value="author">Genre</option>
-    </select>
+<div class=" main-block">
 
-    <!-- Main text input -->
-    <label for="search-input" class="sr-only">Search</label>
-    <input 
-      type="text" 
-      id="search-input" 
-      name="q" 
-      placeholder="Find books, ebooks and more"
-    >
+  <div class = "search-bar">
+    <h2>Search the Library Catalog</h2>
 
-    <!-- Removed the Collection dropdown and the checkbox container. -->
+    <form action="PHP/borrowbook.php" method="GET" class="search-form">
+      
+      <!-- Search type dropdown (Keyword, Title, Author, etc.) -->
+      <label for="search-type" class="sr-only">Search Type</label>
+      <select id="search-type" name="search-type">
+        <option value="keyword">Keyword</option>
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+        <option value="author">Genre</option>
+      </select>
 
-    <!-- Submit button -->
-    <button type="submit" class="search-button">Search</button>
-  </form>
-</section>
+      <!-- Main text input -->
+      <label for="search-input" class="sr-only">Search</label>
+      <input 
+        type="text" 
+        id="search-input" 
+        name="q" 
+        placeholder="Find books, ebooks and more"
+      >
+
+      <!-- Removed the Collection dropdown and the checkbox container. -->
+
+      <!-- Submit button -->
+      <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+
+<div  class ="side-bar">
+
+
 
 <!-- SIDEBAR -->
 <aside class="sidebar">
@@ -136,8 +143,8 @@
     </ul>
   </nav>
 </aside>
-
-      
+</div>
+  <div class ="book-content"> 
       <!-- Table container (optional) -->
   <div class="table-container">
     <table class="book-table">
@@ -151,7 +158,7 @@
         <td>
           <h3 class="book-title">The Partner</h3>
           <h2 class="book-author">John Grisham</h2>
-          <img src="book_images/partner.png" alt="Book 1" class="book-image" />
+          <img src="Imgs/BookCovers/ThePartner.png" alt="Book 1" class="book-image" />
           <div class="book-details">
             <p class="price">$9.99</p>
             <p class="rating">★★★★☆</p>
@@ -319,6 +326,8 @@
       </tr>
     </table>
   </div>
+</div>
+</div>
 
   <!-- Footer -->
   <footer>

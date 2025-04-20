@@ -1,0 +1,61 @@
+/* ==============================================================
+   Layout for search‑bar, side‑bar, and book‑content
+   --------------------------------------------------------------
+   .main-block  becomes a 2 × 2 grid:
+       ┌──────────────────────────────┐  row 1  (search‑bar spans 2 cols)
+       │  .search-bar                 │
+       ├───────────────┬──────────────┤  row 2
+       │ .side-bar     │ .book-content│
+       └───────────────┴──────────────┘
+================================================================= */
+.main-block{
+    display:grid;
+    grid-template-columns: 240px 1fr;   /* sidebar fixed, content flexible */
+    grid-template-rows:   auto 1fr;     /* search row, content row         */
+    gap:20px;
+    width:100%;
+    box-sizing:border-box;
+}
+
+/* ---------- top stripe (already styled in search.css) ---------- */
+.search-bar{
+    grid-column:1 / -1;   /* span both columns */
+}
+
+/* ---------- left column: side‑bar ------------------------------ */
+.side-bar{
+    grid-row:2;
+    grid-column:1;
+    background:#ffffff;
+    padding:20px;
+    border-radius:6px;
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
+    overflow:auto;        /* scroll if the list is long */
+}
+
+/* ---------- right column: book‑content ------------------------- */
+.book-content{
+    grid-row:2;
+    grid-column:2;
+    background:#ffffff;
+    padding:20px;
+    border-radius:6px;
+    box-shadow:0 2px 4px rgba(0,0,0,.1);
+    overflow-y:auto;      /* independent scroll */
+}
+
+/* ---------- simple phone breakpoint --------------------------- */
+@media (max-width: 750px){
+    .main-block{
+        grid-template-columns:1fr;   /* stack sidebar above content */
+        grid-template-rows:auto auto 1fr;
+    }
+    .side-bar{
+        grid-row:2;
+        grid-column:auto;
+    }
+    .book-content{
+        grid-row:3;
+        grid-column:auto;
+    }
+}

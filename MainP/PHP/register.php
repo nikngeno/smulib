@@ -29,10 +29,10 @@ $tableCreation = "
 CREATE TABLE IF NOT EXISTS users (
     UserId INT AUTO_INCREMENT PRIMARY KEY,
     FullName VARCHAR(100),
-    UserName VARCHAR(100),
-    Email VARCHAR(100),
-    Password VARCHAR(50),
-    PasswordRepeat VARCHAR(50),
+    UserName VARCHAR(100) unique,
+    Email VARCHAR(100) unique,
+    Password VARCHAR(255),
+    PasswordRepeat VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 if ($conn->query($tableCreation) !== TRUE) {

@@ -7,7 +7,8 @@
 
 .search-bar .fixed
 {
-  position: fixed;
+  position: 70px;
+  top: 0;
   width: 100%;
   height: 100px;
   position: fixed;
