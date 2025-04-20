@@ -27,6 +27,11 @@
 // require "../DBConnection/DBConnectionConfig.php";
 session_start();
 
+//$filtdate = $_GET['filter']; // Get the filter date from the URL parameterS
+//if ($filtdate == null) 
+//{
+ //   $filtdate = '20251604 00:00:00'; // Default date if not provided
+//}
 $dbhost = "localhost"; // don't include the port like localhost:8080 unless your MySQL is actually on that port
 $dbuser = "root";
 $bdpass = "";

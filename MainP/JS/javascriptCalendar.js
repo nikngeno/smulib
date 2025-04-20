@@ -7,6 +7,11 @@ const nextButton = document.getElementById("nextButton");
 // Initialize the calendar with the current date
 let currentDate = new Date();
 
+void function updateEvent() 
+{
+    
+}
+
 // Function to update the calendar display based on the current date
 const updateCalendar = () => {
     const currentYear = currentDate.getFullYear(); // Get the current year
