@@ -45,7 +45,7 @@ if (!$connection) {
 }
 
 // SQL query
-$sql = "SELECT EventsDate, EventTime, EventName, EventDescription, EventLocation FROM calendar_events ORDER BY EventsDate, EventTime";
+$sql = "SELECT EventsDate, EventTime, EventName, EventDescription, EventLocation FROM calendar_events WHERE EventsDate = ? ORDER BY EventsDate, EventTime";
 $result = mysqli_query($connection, $sql);
 echo mysqli_error($connection); // Debugging line to check for SQL errors
 if (!$result) {
@@ -64,7 +64,9 @@ $connection->close();
 
 // Send JSON response
 header("Content-Type: application/json");
+http_response_code(200); // Always successful even if no events
 echo json_encode($events);
 exit();
+
 ?>
  

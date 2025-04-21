@@ -7,15 +7,15 @@
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/styles.css">
   <link rel="stylesheet" href="CSS/eventcalendar.css">
-
+ 
   <!-- style for Meet the team page-->
   <link rel="stylesheet" href="CSS/team.css">
 </head>
 <body>
-
-  <?php include 'PHP/header.php'; ?>
+ 
+  <?php include 'header.php'; ?>
     <br>
-    <div class = "calendar-wrap"> 
+    <div class = "calendar-wrap">
       <div class="calendar-body">
         <div class="month">      
           <ul>
@@ -27,7 +27,7 @@
             </li>
           </ul>
         </div>
-        
+       
         <ul class="weekdays">
           <li>Sun</li>
           <li>Mon</li>
@@ -37,8 +37,8 @@
           <li>Fri</li>
           <li>Sat</li>
         </ul>
-        
-        <ul class="days" id="dates">   
+       
+        <ul class="days" id="dates">  
           <!-- <li>1</li>
           <li>2</li>
           <li>3</li>
@@ -70,8 +70,8 @@
           <li>29</li>
           <li>30</li>
           <li>31</li> -->
-         </ul> 
-       </div> 
+         </ul>
+       </div>
       <div class = "calendar-events">
         <h2>Upcoming Events</h2>
         <div class="event-item">
@@ -82,7 +82,7 @@
           </div>
           <div><p>Description</p></div>
         </div>
-  
+ 
         <div class="event-item">
           <div class="event-header">
             <span >Date-time</span>
@@ -91,7 +91,7 @@
           </div>
           <div><p>Description</p></div>
         </div>
-          
+         
         <div class="event-item">
           <div class="event-header">
             <span >Date-time</span>
@@ -100,7 +100,7 @@
           </div>
             <div><p>Description</p></div>
         </div>
-  
+ 
           <div class="event-item">
             <div class="event-header">
               <span >Date-time</span>
@@ -109,7 +109,7 @@
             </div>
             <div><p>Description</p></div>
           </div>
-  
+ 
           <div class="event-item">
             <div class="event-header">
               <span >Date-time</span>
@@ -118,19 +118,18 @@
             </div>
             <div><p>Description</p></div>
           </div>
-  
+ 
         </div>
       </div>
     </div>
-
+ 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 SMU Library</p>
   </footer>
-
+ 
   <!-- Link to external JavaScript -->
   <script src="script.js"></script>
   <script src="JS/javascriptCalendar.js"></script>
 </body>
 </html>
-
