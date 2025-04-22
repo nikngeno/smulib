@@ -13,6 +13,7 @@ body {
 .sidebar {
     float: left;
     width: 200px;
+    height: auto;
     min-height: 100vh;
     background-color: #56595e;
     color: #fff;
