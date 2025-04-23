@@ -1,0 +1,113 @@
+/* =============================================================
+   FOUR-PANEL PROFILE GRID
+   ============================================================= */
+
+   body{
+    margin:0;
+}
+
+h1{
+    margin:0 0 1rem;      /* no top-gap, keep a bit below it   */
+}
+
+   .profile-grid{
+    display:grid !important;          /* override any stray rules      */
+    grid-template-areas:
+        "photo   details  details"
+        "photo   active   history";
+    grid-template-columns: 220px 1fr 1fr;  /* sidebar width + 2 flex cols */
+    grid-template-rows: auto 1fr;
+    gap:24px;
+    
+    width:100% !important;
+    box-sizing:border-box;
+    /* optional background you can remove */
+    background:#f9f9e8;
+    margin-top: 0px;
+}
+
+/* area mapping ------------------------------------------------ */
+.profile-photo   { grid-area: photo; }
+.profile-details { grid-area: details; }
+.profile-active  { grid-area: active; }
+.profile-history { grid-area: history; }
+
+/* panel styling ----------------------------------------------- */
+.profile-grid > div{
+    background:#fff;
+    border-radius:8px;
+    padding:1rem 1.25rem;
+    box-shadow:0 2px 4px rgba(0,0,0,.08);
+}
+
+/* make avatar fill its box nicely ----------------------------- */
+.profile-photo{
+    display:flex;
+    margin-top: 0%;
+    align-items:center;
+    justify-content:center;
+}
+.profile-photo img{
+    width:100%;
+    height:auto;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+/* responsive stack on narrow screens -------------------------- */
+@media (max-width:820px){
+    .profile-grid{
+        grid-template-areas:
+            "photo"
+            "details"
+            "active"
+            "history";
+        grid-template-columns:1fr;
+        grid-template-rows:auto;
+    }
+}
+/* ===========================================================
+   W I D E   P R O F I L E   L A Y O U T
+   Remove any site-wide max-width / margin that centers <main>
+   =========================================================== */
+   main.profile-grid{
+    max-width:none !important;   /* bust any max-width:1200px etc.   */
+    margin-left:0   !important;  /* flush with viewport              */
+    margin-right:0  !important;
+    /* keep a little side padding so content doesn’t kiss the edge   */
+    padding-left:2rem;
+    padding-right:2rem;
+}
+/* ----- keep the panel square & centred (already exists) ----- */
+.profile-photo{
+    position:relative;         /* lets us overlay the button   */
+    overflow:hidden;           /* neat edges for clipping      */
+}
+
+/* image is 100 % of the box, keeps border-radius -------------- */
+.profile-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:inherit;     /* inherits 8 px from panel      */
+}
+
+/* button overlay --------------------------------------------- */
+.avatar-btn{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:0.4rem 0;
+    background:rgba(0,0,0,0.55);
+    color:#fff;
+    font-size:0.9rem;
+    text-align:center;
+    cursor:pointer;
+    opacity:0;
+    transition:opacity 0.25s;
+}
+
+.profile-photo:hover .avatar-btn{
+    opacity:1;                 /* reveal on hover              */
+}

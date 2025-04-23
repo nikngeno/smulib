@@ -5,100 +5,87 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SMU Library</title>
-  <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="CSS/styles.css">
+    <meta charset="UTF-8">
+    <title>SMU Library – Profile</title>
 
-  <!-- style for Meet the team page-->
-  <link rel="stylesheet" href="CSS/team.css">
-  <h1>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
+    <!-- ❶ Global styles first -->
+    <link rel="stylesheet" href="../CSS/styles.css">
+
+    <!-- ❷ Any other page-specific files that SHOULD override globals -->
+    <link rel="stylesheet" href="CSS/team.css">
+
+    <!-- ❸ PROFILE GRID –– must come LAST so nothing overrides it -->
+    <link rel="stylesheet" href="../CSS/profile.css">
+    
+    <link rel="icon" href="saint-martin-university_track-field_saints_logo.png">
 </head>
 <body>
 
- <!-- Header and Navigation -->
- <?php include "header.php" ?>
+<?php include "header.php"; ?>
 
-  <main>
-    <br>
-    <br>
-    <!-- Main Content Areas -->
-    <h2 align ="center"><u>Meet The Team</u></h2>
+<h3>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
 
-<br>
+<main class="profile-grid">
 
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="Imgs/people_images/Amber.jpg" alt="Amber" style="width:100%">
-      <div class="container">
-        <h2>Amber Mattoni</h2>
-        <p class="title">Library Support Staff</p>
-        <p>Education Background:</p>
-        <p>Bachelor of Science in Education</p>
-        <p><strong>Expertise:</strong></p>
-        <p>Front desk operations, assisting students and faculty with material checkouts and tech use.</p>
-        <p>Known for organizing displays and creating welcoming spaces in the library.</p>
-        <div>
-          <button class="button"><a href="mailto:amber.mattoni@stmartin.edu">Email</a></button>
-          <button class="button"><a href="tel:5551234567">Call</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
+   
+<form  class="profile-photo" 
+       id="avatar-form" 
+       action="PHP/upload_avatar.php" 
+       method="POST" 
+       enctype="multipart/form-data">
 
-  <div class="column">
-    <div class="card">
-      <img src="Imgs/people_images/miguel.jpg" alt="Miguel" style="width:100%">
-      <div class="container">
-        <h2>Miguel Gomez</h2>
-        <p class="title">Senior Librarian</p>
-        <p>Education Background:</p>
-        <p> Master of Library Science</p>
-        <p><strong>Expertise:</strong></p>
-        <p> Reader's advisory, cataloging systems, and information retrieval.</p>
-        <p>Leads adult programming and manages literary events and book clubs. Oversees research support services, academic liaison work, and special collections.</p>
-        <p></p>
-        <div>
-          <button class="button"><a href="mailto:miguel.gomez@stmartin.edu">Email</a></button>
-          <button class="button"><a href="tel:5559876543">Call</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="Imgs/people_images/Nick.jpg" alt="Nick" style="width:100%">
-      <div class="container">
+    <!-- current / fallback avatar -->
+    <img id="avatar-preview"
+         src="<?php echo htmlspecialchars($avatarPath ?? 'Imgs/usersphotos/Nick.jpg'); ?>"
+         alt="Profile picture">
+
+    <!-- hidden input -->
+    <input type="file"
+           name="avatar"
+           id="avatar-input"
+           accept="image/*"
+           hidden>
+
+    <!-- visible overlay button -->
+    <label for="avatar-input" class="avatar-btn">
+        Change&nbsp;photo
+    </label>
+</form>
+<!-- ----------------------------------------------------------------- -->
+
+
+    <div class="profile-details">
         <h2>Nicholas Ngeno</h2>
-        <p class="title">Library Administrator</p>
-        <p>Education Background:</p>
-        <p>Bachelor of Arts in Public Administration</p>
-        <p><strong>Expertise:</strong></p>
-        <p>Library leadership, strategic planning, budget management, and staff development.</p>
-        <p>Specializes in long-term planning and integration of digital systems in academic libraries.</p>
-        <div>
-          <button class="button"><a href="mailto:nicholas.ngeno@stmartin.edu">Email</a></button>
-          <button class="button"><a href="tel:5552468101">Call</a></button>
-        </div>
-      </div>
+        <p><strong>Email:</strong> nick@example.com</p>
+        <p><strong>Phone:</strong> +1 234 567 8901</p>
+        <p><strong>Address:</strong> 123 Campus Way, Lacey WA</p>
     </div>
-  </div>
-</div>
-</main>
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 SMU Library</p>
-  </footer>
 
-  <!-- Link to external JavaScript -->
-  <script src="script.js"></script>
+    <div class="profile-active">
+        <h3>Active Loans</h3>
+        <ul>
+            <li><em>Clean Code</em> — Due 12 May 2025</li>
+            <li><em>The Pragmatic Programmer</em> — Due 18 May 2025</li>
+        </ul>
+    </div>
+
+    <div class="profile-history">
+        <h3>Previously Borrowed</h3>
+        <ul>
+            <li><em>Design Patterns</em></li>
+            <li><em>Introduction to Algorithms</em></li>
+        </ul>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 SMU Library</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
