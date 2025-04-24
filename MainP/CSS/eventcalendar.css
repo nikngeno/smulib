@@ -8,6 +8,7 @@
 
 * {
 box-sizing: border-box;
+
 }
 
 ul {
@@ -15,8 +16,15 @@ list-style-type: none;
 }
 
 body {
-font-family: Merriweather;
-padding: 0;
+  font-family: Merriweather;
+  padding: 0;
+}
+
+.content-container
+{
+  display: grid;
+  /* grid-template-columns: 1fr;
+  grid-template-rows: 1fr 50px; */
 }
 
 .month {
