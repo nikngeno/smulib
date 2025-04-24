@@ -86,7 +86,7 @@ function dateClicked(date) {
     const formattedDate = date.toISOString().split('T')[0];
 
     // Send a GET request to the PHP script, including the selected date as a query parameter
-    fetch(`DBQueries/getcalendarevents.php?date=${formattedDate}`)
+    fetch(`../DBQueries/getcalendarevents.php?date=${formattedDate}`)
 
         // Handle the server's response
         .then(response => {

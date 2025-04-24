@@ -5,17 +5,18 @@
   <title>SMU Library</title>
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="CSS/eventcalendar.css">
+  <link rel="stylesheet" href="../CSS/eventcalendar.css">
+  <link rel="stylesheet" href="../CSS/styles.css">
  
   <!-- style for Meet the team page-->
-  <link rel="stylesheet" href="CSS/team.css">
-  <link  rel="stylesheet" href="CSS/header.css">
+  <link rel="stylesheet" href="../CSS/team.css">
+  <link  rel="stylesheet" href="../CSS/header.css">
 </head>
 <body>
-  
-  <?php include 'PHP/header.php'; ?>
-  <div class="content-container">
-    <main>
+ 
+  <?php include '../PHP/header.php'; ?>
+ 
+    <!-- <main> -->
       <br>
       <div class = "calendar-wrap">
         <div class="calendar-body">
@@ -29,7 +30,7 @@
               </li>
             </ul>
           </div>
-        
+       
           <ul class="weekdays">
             <li>Sun</li>
             <li>Mon</li>
@@ -39,7 +40,7 @@
             <li>Fri</li>
             <li>Sat</li>
           </ul>
-        
+       
           <ul class="days" id="dates"></ul>
         </div>
         <div class = "calendar-events" id="calendar-events-holder">
@@ -52,7 +53,7 @@
             </div>
             <div><p>Description</p></div>
           </div>
-  
+ 
           <div class="event-item">
             <div class="event-header">
               <span >Date-time</span>
@@ -61,7 +62,7 @@
             </div>
             <div><p>Description</p></div>
           </div>
-          
+         
           <div class="event-item">
             <div class="event-header">
               <span >Date-time</span>
@@ -70,7 +71,7 @@
             </div>
               <div><p>Description</p></div>
           </div>
-  
+ 
             <div class="event-item">
               <div class="event-header">
                 <span >Date-time</span>
@@ -79,7 +80,7 @@
               </div>
               <div><p>Description</p></div>
             </div>
-  
+ 
             <div class="event-item">
               <div class="event-header">
                 <span >Date-time</span>
@@ -88,19 +89,18 @@
               </div>
               <div><p>Description</p></div>
             </div>
-  
+ 
           </div>
         </div>
       </div>
-    </main>
+    <!-- </main> -->
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 SMU Library</p>
-    </footer>
-  </div>
+    <p>&copy; 2025 SMU Library</p>
+  </footer>
  
   <!-- Link to external JavaScript -->
-  <script src="script.js"></script>
-  <script src="JS/javascriptCalendar.js"></script>
+  <script src="../script.js"></script>
+  <script src="../JS/javascriptCalendar.js"></script>
 </body>
 </html>
