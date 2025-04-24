@@ -50,9 +50,9 @@
             <li class="dropdown">
               <a href="#">About Us</a>
               <ul class="dropdown-content">
-                <li><a href="team.php">Our Staff</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
-                <li><a href="location.php">Location</a></li>
+                <li><a href="../team.html">Our Staff</a></li>
+                <li><a href="../contact.html">Contact Us</a></li>
+                <li><a href="../location.html">Location</a></li>
                 <!--<li><a href="#">Sub Item 3</a></li> -->
               </ul>
             </li>
@@ -60,8 +60,8 @@
               <li class="dropdown">
                 <a href="">My Account</a>
                 <ul class="dropdown-content">
-                  <li><a href="#">Sign in</a></li>
-                  <li><a href="maincart.php">My Cart</a></li>
+                  <li><a href="../sign_in.html">Sign in</a></li>
+                  <li><a href="../maincart.html">My Cart</a></li>
                 </ul>
               </li>
           </ul>
