@@ -1,4 +1,3 @@
-
 <?php
 //require "../DBConnection/DBConnectionConfig.php";
 // session_start();
