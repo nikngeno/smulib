@@ -6,6 +6,7 @@
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/eventcalendar.css">
+  <link rel="stylesheet" href="CSS/styles.css">
  
   <!-- style for Meet the team page-->
   <link rel="stylesheet" href="CSS/team.css">
@@ -14,7 +15,7 @@
 <body>
   
   <?php include 'PHP/header.php'; ?>
-  <div class="content-container">
+  
     <main>
       <br>
       <div class = "calendar-wrap">
@@ -95,9 +96,8 @@
     </main>
     <!-- Footer -->
     <footer>
-      <p>&copy; 2025 SMU Library</p>
-    </footer>
-  </div>
+    <p>&copy; 2025 SMU Library</p>
+  </footer>
  
   <!-- Link to external JavaScript -->
   <script src="script.js"></script>
