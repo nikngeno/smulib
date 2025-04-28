@@ -1,0 +1,101 @@
+/* container and heading */
+.sellbook-container {
+    padding: 2rem;
+    max-width: none; 
+    margin-top: 60px;      /* fill full width */
+  }
+  .sellbook-container h1 {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* grid layout: 2-column form */
+  .sellbook-form .form-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 1rem 2rem;
+    align-items: start;
+  }
+  
+  /* labels aligned right */
+  .sellbook-form label {
+    justify-self: end;
+    padding-top: 0.5rem;
+    min-height: 3em;
+  }
+  
+  /* full-width inputs & textarea */
+  .sellbook-form input[type="text"],
+  .sellbook-form input[type="number"],
+  .sellbook-form input[type="file"],
+  .sellbook-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  /* button row spans both columns */
+  .sellbook-form .form-buttons {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* styled buttons */
+  .sellbook-form button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    background: #c33;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .sellbook-form button[type="reset"] {
+    background: #777;
+  }
+  .sellbook-form button:hover {
+    opacity: 0.9;
+  }
+  
+  /* mobile stack under 600px */
+  @media (max-width: 600px) {
+    .sellbook-form .form-grid {
+      grid-template-columns: 1fr;
+    }
+    .sellbook-form label {
+      justify-self: start;
+    }
+  }
+  
+  .sellbook-form select {
+    /* match the input padding & font-size */
+    padding: 0.75rem 0.75rem;   
+    font-size: 1rem;
+    /* force the overall control height */
+    height: 3rem;             
+    /* ensure the box-sizing stays consistent */
+    box-sizing: border-box;
+  }
+
+  /* make the summary textarea taller */
+.sellbook-form textarea#book-summary {
+    height: 12rem;            /* you can tweak this */
+    padding: 0.75rem;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: vertical;         /* allow the user to grow it further if they want */
+  }
+  
+  /* style the live word-count display */
+  .sellbook-form .word-counter {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+  }
+  

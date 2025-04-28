@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SMU Library – Sell a Book</title>
+  <link rel="icon" href="saint-martin-university_track-field_saints_logo.png">
+
+  <!-- global styles -->
+  <link rel="stylesheet" href="CSS/styles.css">
+  <!-- form page styles (must come after globals) -->
+  <link rel="stylesheet" href="CSS/sellbook.css">
+</head>
+<body>
+
+  <!-- Header / Navigation (your existing snippet) -->
+  <header>
+    <div class="nav-container">
+      <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <a href="#">Books</a>
+            <ul class="dropdown-content">
+              <li><a href="borrowbook.html">Borrow a Book</a></li>
+              <li><a href="sellbook.html">Sell a Book</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Service</a>
+            <ul class="dropdown-content">
+              <li><a href="bookappointment.html">Book an Appointment</a></li>
+              <li><a href="reserveroom.html">Reserve Room</a></li>
+              <li><a href="requestlibrarian.html">Request A Librarian</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">News and Events</a>
+            <ul class="dropdown-content">
+              <li><a href="PHP/eventcalendar.php">Latest News</a></li>
+              <li><a href="#">Promotions</a></li>
+              <li><a href="#">Support the Library</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">About Us</a>
+            <ul class="dropdown-content">
+              <li><a href="team.html">Our Staff</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="location.html">Location</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">My Account</a>
+            <ul class="dropdown-content">
+              <li><a href="sign_in.html">Sign In</a></li>
+              <li><a href="maincart.html">My Cart</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main selling form -->
+  <main class="sellbook-container">
+    <h1>Sell Your Book</h1>
+
+    <form id="sellbook-form"
+          action="PHP/sellbook_handler.php"
+          method="POST"
+          enctype="multipart/form-data"
+          class="sellbook-form">
+
+      <div class="form-grid">
+
+        <label for="author-name">Author Name</label>
+        <input type="text" id="author-name" name="author_name" required>
+
+        <label for="book-title">Book Title</label>
+        <input type="text" id="book-title" name="book_title" required>
+
+        <label for="book-price">Book Price</label>
+        <input type="number" id="book-price" name="book_price"
+               min="0" step="0.01" required>
+
+        <label for="book-genre">Book Genre</label>
+        <select id="book-genre" name="book_genre" required>
+          <option value="" disabled selected>— Select a genre —</option>
+          <option value="Biography &amp; Memoir">Biography &amp; Memoir</option>
+          <option value="Business">Business</option>
+          <option value="Cooking">Cooking</option>
+          <option value="Fantasy, Horror &amp; Sci-Fi">Fantasy, Horror & Sci-Fi</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+          <option value="Literary Fiction">Literary Fiction</option>
+          <option value="Mystery &amp; Thriller">Mystery & Thriller</option>
+          <!-- add more as needed -->
+        </select>
+
+        <label for="book-cover">Book Cover (Image, optional)</label>
+<input type="file"
+       id="book-cover"
+       name="book_cover"
+       accept="image/*">
+
+
+        <label for="book-file">Book File (PDF, max 3 MB)</label>
+        <input type="file" id="book-file" name="book_file"
+               accept="application/pdf" required>
+
+               <label for="book-summary">Book Summary</label>
+               <textarea id="book-summary" name="book_summary" required></textarea>
+               <div class="word-counter">
+                 <span id="summary-count">0</span>/500 words
+               </div>
+
+        <div class="form-buttons">
+          <button type="reset">Clear</button>
+          <button type="submit">Submit</button>
+        </div>
+
+      </div><!-- /.form-grid -->
+
+    </form><!-- /#sellbook-form -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SMU Library</p>
+  </footer>
+
+  <!-- your global JS -->
+  <script src="script.js"></script>
+  <!-- optional inline alert on ?success=1 -->
+  <script>
+    if (new URLSearchParams(window.location.search).get('success') === '1') {
+      alert("Thanks! Your book has been uploaded and will be reviewed within 3 weeks.");
+    }
+  </script>
+
+<script>
+    (function(){
+      const ta       = document.getElementById('book-summary');
+      const counter  = document.getElementById('summary-count');
+      const MAX_WORD = 500;
+  
+      ta.addEventListener('input', () => {
+        // count words (split on whitespace, filter out empties)
+        const words = ta.value.trim().split(/\s+/).filter(w => w.length);
+        let count = words.length;
+  
+        // if over limit, trim back to first MAX_WORD words
+        if(count > MAX_WORD){
+          ta.value = words.slice(0, MAX_WORD).join(' ') + ' ';
+          count = MAX_WORD;
+        }
+  
+        counter.textContent = count;
+      });
+    })();
+  </script>
+  
+</body>
+</html>
