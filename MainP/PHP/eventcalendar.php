@@ -5,30 +5,18 @@
   <title>SMU Library</title>
   <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
-<<<<<<< HEAD:MainP/eventcalendar.php
-  <link rel="stylesheet" href="CSS/eventcalendar.css">
-  <link rel="stylesheet" href="CSS/styles.css">
-=======
   <link rel="stylesheet" href="../CSS/eventcalendar.css">
   <link rel="stylesheet" href="../CSS/styles.css">
->>>>>>> aff8f8921293c8aeebf2e3db9cdcb11d7d1382c0:MainP/PHP/eventcalendar.php
  
   <!-- style for Meet the team page-->
   <link rel="stylesheet" href="../CSS/team.css">
   <link  rel="stylesheet" href="../CSS/header.css">
 </head>
 <body>
-<<<<<<< HEAD:MainP/eventcalendar.php
   
-  <?php include 'PHP/header.php'; ?>
-  
-    <main>
-=======
- 
   <?php include '../PHP/header.php'; ?>
- 
+  
     <!-- <main> -->
->>>>>>> aff8f8921293c8aeebf2e3db9cdcb11d7d1382c0:MainP/PHP/eventcalendar.php
       <br>
       <div class = "calendar-wrap">
         <div class="calendar-body">
