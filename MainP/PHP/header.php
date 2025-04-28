@@ -37,14 +37,14 @@
             </li>
 
             <!-- Menu Item 4 -->
-            <li class="dropdown">
+            <!-- <li class="dropdown">
               <a href="#">For You</a>
               <ul class="dropdown-content">
                 <li><a href="#">Student</a></li>
                 <li><a href="#">Military</a></li>
                 <li><a href="#">Public</a></li>
               </ul>
-            </li>
+            </li> -->
 
             <!-- Menu Item 5 -->
             <li class="dropdown">

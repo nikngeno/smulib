@@ -12,15 +12,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
         integrity="sha512-yHhbHhqJl9owqMxg2q7+Qx/XfXUoiVnq0l6v6JZ2Q4eUT7Y7+/2LZYzOw6QqF5q5cSKIYhK1jQBJbg2cJp+h5g==" 
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src ="JS/cart.js" async></script>
-        <script>
-          document.addEventListener('DOMContentLoaded', function() {
-              updateCartTotal();
-              updatePaymentSummary();
-          });
-          </script>
-          
+  <style>
+    /* Fix layout: make cart-table and payment section vertical */
+    .cart-page {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  </style>
+
+  <script src="JS/cart.js" async></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartTotal();
+        updatePaymentSummary();
+    });
+  </script>
 </head>
+
 <body>
 
 <!-- Header and Navigation -->
@@ -28,14 +37,13 @@
   <div class="nav-container">
     <h1><a href="index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
     <nav>
+      <!-- (your nav menu here, unchanged) -->
       <ul>
         <li class="dropdown">
           <a href="#">Books</a>
           <ul class="dropdown-content">
             <li><a href="borrowbook.html">Borrow a Book</a></li>
-            <!-- <li><a href="#">Return a Book</a></li> -->
             <li><a href="sellbook.html">Sell a Book</a></li>
-            <!-- <li><a href="#">Buy a Book</a></li> -->
           </ul>
         </li>
         <li class="dropdown">
@@ -49,19 +57,11 @@
         <li class="dropdown">
           <a href="#">News and Events</a>
           <ul class="dropdown-content">
-            <li><a href="calendar.html">Latest News</a></li>
+            <li><a href="PHP/eventcalendar.php">Latest News</a></li>
             <li><a href="#">Promotions</a></li>
             <li><a href="#">Support the Library</a></li>
           </ul>
         </li>
-        <!-- <li class="dropdown">
-          <a href="#">For You</a>
-          <ul class="dropdown-content">
-            <li><a href="#">Student</a></li>
-            <li><a href="#">Military</a></li>
-            <li><a href="#">Public</a></li>
-          </ul>
-        </li> -->
         <li class="dropdown">
           <a href="#">About Us</a>
           <ul class="dropdown-content">
@@ -71,10 +71,13 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a href="">My Account</a>
+          <a href="#">My Account</a>
           <ul class="dropdown-content">
             <li><a href="sign_in.html">Sign in</a></li>
-            <li><a href="maincart.html">My Cart</a></li>
+            <li><a href="maincart.html">
+              My Cart
+              <span id="cart-count-badge" style="background:red;color:white;padding:2px 6px;border-radius:12px;font-size:12px;margin-left:4px;">0</span>
+            </a></li>
           </ul>
         </li>
       </ul>
@@ -83,205 +86,226 @@
 </header>
 
 <!-- Main Content -->
- <main>
+<main>
 <br>
 <section class="h-100 h-custom cart-section">
   <div class="container-fluid h-100 py-5">
     <div class="row h-100">
       <div class="col-12">
-        
-        
 
-        <div class="cart-table">
-          <!-- Header Row -->
-          <div class="cart-row header">
-            <div class="cart-col col-product">Shopping Cart</div>
-            <div class="cart-col col-format">Format</div>
-            <div class="cart-col col-quantity">Quantity</div>
-            <div class="cart-col col-price">Price</div>
-            <div class="cart-col col-remove"></div>
-          </div>
-          
-          <!-- Row 1 -->
-          <div class="cart-row">
-            <div class="cart-col col-product">
-              <div class="d-flex align-items-center">
-                <img src="https://i.imgur.com/2DsA49b.webp" class="img-fluid" alt="Book">
-                <div class="ms-4 d-flex flex-column justify-content-center">
-                  <span class="book-title">Thinking, Fast and Slow</span>
-                  <span class="book-author">Daniel Kahneman</span>
-                </div>
-              </div>
-            </div>
-            <div class="cart-col col-format">
-              <p class="mb-0" style="font-weight: 500;">Digital</p>
-            </div>
-            <div class="cart-col col-quantity">
-              <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="cart-col col-price">
-              <p class="mb-0" style="font-weight: 500;" data-unitprice="9.99">$9.99</p>
-            </div>
-            <div class="cart-col col-remove">
-              <button class="btn btn-danger btn-sm">Remove</button>
-            </div>
-          </div>
-          <div class="cart-row">
-            <div class="cart-col col-product">
-              <div class="d-flex align-items-center">
-                <img src="https://i.imgur.com/2DsA49b.webp" class="img-fluid" alt="Book">
-                <div class="ms-4 d-flex flex-column justify-content-center">
-                  <span class="book-title">Thinking, Fast and Slow</span>
-                  <span class="book-author">Daniel Kahneman</span>
-                </div>
-              </div>
-            </div>
-            <div class="cart-col col-format">
-              <p class="mb-0" style="font-weight: 500;">Paperback</p>
-            </div>
-            <div class="cart-col col-quantity">
-              <div class="d-flex flex-row">
-                <button class="btn btn-link px-2" title="Decrease quantity" onclick="this.parentNode.querySelector('input[type=number]').stepDown(); updateCartTotal(); updatePaymentSummary();">
-                  <i class="fas fa-minus"></i>
-                </button>
-                <input min="0" name="quantity" value="1" type="number" class="form-control form-control-sm" title="Enter quantity" placeholder="Quantity" onchange="updateCartTotal(); updatePaymentSummary();">
-                <button class="btn btn-link px-2" title="Increase quantity" onclick="this.parentNode.querySelector('input[type=number]').stepUp(); updateCartTotal(); updatePaymentSummary();">
-                  <i class="fas fa-plus"></i>
-                </button>
-              </div>
-            </div>
-            <div class="cart-col col-price">
-              <p class="mb-0" style="font-weight: 500;" data-unitprice="10.99">$10.99</p>
-            </div>
-            <div class="cart-col col-remove">
-              <button class="btn btn-danger btn-sm">Remove</button>
-            </div>
-          </div>
-          <!-- Repeat rows as needed -->
-        </div>
-        <br>
-        <br>
+        <!-- START cart-page wrapper -->
+        <div class="cart-page">
 
-        <!-- PAYMENT CARD SECTION -->
-        <div class="card mx-auto shadow-2-strong mb-5" style="width: 100%; border-radius: 16px;">
-          <div class="card-body p-4">
-            <div class="payment-row">
-              
-              <!-- LEFT COLUMN: Payment Options -->
-              <div class="payment-col left">
-                <form>
-                  <div class="d-flex flex-row pb-3">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="paymentOption" id="radioCard" value="card" checked title="Select Credit Card as payment option" />
-                      <label for="radioCard" class="visually-hidden">Credit Card</label>
-                    </div>
-                    <div class="rounded border w-100 p-3 payment-option-box">
-                      <p class="d-flex align-items-center mb-0">
-                        <img src="icons/mastercard.png" alt="Mastercard" style="width: 2em; height: auto; padding-right: 0.5rem;">
-                        Credit Card
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row pb-3">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="paymentOption" id="radioDebit" value="debit" title="Select Debit Card as payment option" />
-                      <label for="radioDebit" class="visually-hidden">Debit Card</label>
-                    </div>
-                    <div class="rounded border w-100 p-3 payment-option-box">
-                      <p class="d-flex align-items-center mb-0">
-                        <img src="icons/visa.png" alt="Visa Card" style="width: 2em; height: auto; padding-right: 0.5rem;">
-                        Debit Card
-                      </p>
-                    </div>
-                  </div>
-                  <div class="d-flex flex-row">
-                    <div class="d-flex align-items-center pe-2">
-                      <input class="form-check-input" type="radio" name="paymentOption" id="radioPayPal" value="paypal" title="Select PayPal as payment option" />
-                      <label for="radioPayPal" class="visually-hidden">PayPal</label>
-                    </div>
-                    <div class="rounded border w-100 p-3 payment-option-box">
-                      <p class="d-flex align-items-center mb-0">
-                        <img src="icons/paypal.png" alt="Paypal" style="width: 2em; height: auto; padding-right: 0.5rem;">
-                        PayPal
-                      </p>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              
-              <!-- MIDDLE COLUMN: Payment Form -->
-              <div class="payment-col middle">
-                <!-- Row 1: Name & Card Number side by side -->
-                <div class="form-row">
-                  <div class="form-group half">
-                    <label for="typeName">Name on card</label>
-                    <input type="text" id="typeName" class="bigger-box" placeholder="John Smith">
-                  </div>
-                  <div class="form-group half">
-                    <label for="typeText">Card Number</label>
-                    <input type="text" id="typeText" class="bigger-box" placeholder="1111 2222 3333 4444" minlength="19" maxlength="19">
-                  </div>
-                </div>
-                <!-- Row 2: Expiration & CVV side by side -->
-                <div class="form-row">
-                  <div class="form-group half">
-                    <label for="typeExp">Expiration</label>
-                    <input type="text" id="typeExp" class="bigger-box" placeholder="MM/YY" minlength="7" maxlength="7">
-                  </div>
-                  <div class="form-group half">
-                    <label for="typeCvv">CVV</label>
-                    <input type="password" id="typeCvv" class="bigger-box" placeholder="&#9679;&#9679;&#9679;" minlength="3" maxlength="3">
-                  </div>
-                </div>
-              </div>
-              
-             <!-- RIGHT COLUMN: Totals -->
-<div class="payment-col right">
-  <div class="price-row d-flex justify-content-between font-weight-500">
-    <p class="mb-2">Subtotal:</p>
-    <p class="mb-2">$23.49</p>
-  </div>
-  <div class="price-row d-flex justify-content-between font-weight-500">
-    <p class="mb-0">Tax:</p>
-    <p class="mb-0">$2.99</p>
-  </div>
-  <hr class="my-4">
-  <div class="price-row d-flex justify-content-between mb-4">
-    <p class="mb-2">Total:</p>
-    <p class="mb-2">$26.48</p>
-  </div>
-  <button type="button" class="btn btn-primary btn-block btn-lg">
-    <div class="d-flex justify-content-between">
-      <span>Checkout</span>
-      <span id="checkout-total">$26.48</span>
-    </div>
-  </button>
-</div>
+          <!-- Cart Table -->
+          <div class="cart-table">
+            <!-- Header Row -->
+            <div class="cart-row header">
+              <div class="cart-col col-product">Shopping Cart</div>
+              <div class="cart-col col-format">Format</div>
+              <div class="cart-col col-quantity">Quantity</div>
+              <div class="cart-col col-price">Price</div>
+              <div class="cart-col col-remove"></div>
+            </div>
+            <!-- Dynamic cart items will be injected here -->
+          </div>
 
-              
-            </div><!-- end .payment-row -->
-          </div><!-- end .card-body -->
-        </div><!-- end .card -->
-        <!-- END PAYMENT CARD SECTION -->
-        
+          <!-- PAYMENT CARD SECTION -->
+          <div class="card mx-auto shadow-2-strong mb-5" style="width: 100%; border-radius: 16px;">
+            <div class="card-body p-4">
+              <div class="payment-row">
+                
+                <!-- LEFT COLUMN: Payment Options -->
+                <div class="payment-col left">
+                  <form>
+                    <div class="d-flex flex-row pb-3">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="paymentOption" id="radioCard" value="card" checked />
+                        <label for="radioCard" class="visually-hidden">Credit Card</label>
+                      </div>
+                      <div class="rounded border w-100 p-3 payment-option-box">
+                        <p class="d-flex align-items-center mb-0">
+                          <img src="icons/mastercard.png" alt="Mastercard" style="width: 2em; height: auto; padding-right: 0.5rem;">
+                          Credit Card
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row pb-3">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="paymentOption" id="radioDebit" value="debit" />
+                        <label for="radioDebit" class="visually-hidden">Debit Card</label>
+                      </div>
+                      <div class="rounded border w-100 p-3 payment-option-box">
+                        <p class="d-flex align-items-center mb-0">
+                          <img src="icons/visa.png" alt="Visa Card" style="width: 2em; height: auto; padding-right: 0.5rem;">
+                          Debit Card
+                        </p>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row">
+                      <div class="d-flex align-items-center pe-2">
+                        <input class="form-check-input" type="radio" name="paymentOption" id="radioPayPal" value="paypal" />
+                        <label for="radioPayPal" class="visually-hidden">PayPal</label>
+                      </div>
+                      <div class="rounded border w-100 p-3 payment-option-box">
+                        <p class="d-flex align-items-center mb-0">
+                          <img src="icons/paypal.png" alt="Paypal" style="width: 2em; height: auto; padding-right: 0.5rem;">
+                          PayPal
+                        </p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                
+                <!-- MIDDLE COLUMN: Payment Form -->
+                <div class="payment-col middle">
+                  <div class="form-row">
+                    <div class="form-group half">
+                      <label for="typeName">Name on card</label>
+                      <input type="text" id="typeName" class="bigger-box" placeholder="John Smith">
+                    </div>
+                    <div class="form-group half">
+                      <label for="typeText">Card Number</label>
+                      <input type="text" id="typeText" class="bigger-box" placeholder="1111 2222 3333 4444" minlength="19" maxlength="19">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group half">
+                      <label for="typeExp">Expiration</label>
+                      <input type="text" id="typeExp" class="bigger-box" placeholder="MM/YY" minlength="7" maxlength="7">
+                    </div>
+                    <div class="form-group half">
+                      <label for="typeCvv">CVV</label>
+                      <input type="password" id="typeCvv" class="bigger-box" placeholder="●●●" minlength="3" maxlength="3">
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- RIGHT COLUMN: Totals -->
+                <div class="payment-col right">
+                  <div class="price-row d-flex justify-content-between font-weight-500">
+                    <p class="mb-2">Subtotal:</p>
+                    <p class="mb-2">$23.49</p>
+                  </div>
+                  <div class="price-row d-flex justify-content-between font-weight-500">
+                    <p class="mb-0">Tax:</p>
+                    <p class="mb-0">$2.99</p>
+                  </div>
+                  <hr class="my-4">
+                  <div class="price-row d-flex justify-content-between mb-4">
+                    <p class="mb-2">Total:</p>
+                    <p class="mb-2">$26.48</p>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-block btn-lg">
+                    <div class="d-flex justify-content-between">
+                      <span>Checkout</span>
+                      <span id="checkout-total">$26.48</span>
+                    </div>
+                  </button>
+                </div>
+
+              </div><!-- payment-row -->
+            </div><!-- card-body -->
+          </div><!-- card -->
+        </div><!-- cart-page -->
+
       </div>
     </div>
   </div>
 </section>
 </main>
+
 <!-- Footer -->
 <footer>
   <p>&copy; 2025 SMU Library</p>
 </footer>
 
-<!-- External JavaScript -->
+<!-- Script for loading cart items -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      const cartTable = document.querySelector('.cart-table');
+  
+      cartItems.forEach(function(item) {
+          const cartRow = document.createElement('div');
+          cartRow.classList.add('cart-row');
+  
+          cartRow.innerHTML = `
+              <div class="cart-col col-product">
+                  <div class="d-flex align-items-center">
+                      <img src="${item.imgSrc}" class="img-fluid" alt="Book">
+                      <div class="ms-4 d-flex flex-column justify-content-center">
+                          <span class="book-title">${item.title}</span>
+                          <span class="book-author">${item.author}</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="cart-col col-format">
+                  <p class="mb-0" style="font-weight: 500;">Paperback</p>
+              </div>
+              <div class="cart-col col-quantity">
+                  <div class="d-flex flex-row">
+                      <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input').stepDown(); updateCartTotal(); updatePaymentSummary();">
+                          <i class="fas fa-minus"></i>
+                      </button>
+                      <input min="0" name="quantity" value="${item.quantity}" type="number" class="form-control form-control-sm" onchange="updateCartTotal(); updatePaymentSummary();">
+                      <button class="btn btn-link px-2" onclick="this.parentNode.querySelector('input').stepUp(); updateCartTotal(); updatePaymentSummary();">
+                          <i class="fas fa-plus"></i>
+                      </button>
+                  </div>
+              </div>
+              <div class="cart-col col-price">
+                  <p class="mb-0" data-unitprice="${item.price}">$${item.price.toFixed(2)}</p>
+              </div>
+              <div class="cart-col col-remove">
+                  <button class="btn btn-danger btn-sm remove-btn">Remove</button>
+              </div>
+          `;
+          cartTable.appendChild(cartRow);
+  
+          // Attach Remove button functionality here
+          const removeButton = cartRow.querySelector('.remove-btn');
+          removeButton.addEventListener('click', function() {
+              let currentCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  
+              // Identify book to remove by title and author
+              const bookTitle = cartRow.querySelector('.book-title').innerText.trim();
+              const bookAuthor = cartRow.querySelector('.book-author').innerText.trim();
+  
+              // Filter out the book from cartItems
+              const updatedCartItems = currentCartItems.filter(item => !(item.title === bookTitle && item.author === bookAuthor));
+  
+              // Update localStorage
+              localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  
+              // Remove from DOM
+              cartRow.remove();
+  
+              // Update cart totals
+              updateCartTotal();
+              updatePaymentSummary();
+          });
+      });
+  
+      updateCartTotal();
+      updatePaymentSummary();
+  });
+  </script>
+  <script>
+    function updateCartBadge() {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const badge = document.getElementById('cart-count-badge');
+        if (badge) {
+            badge.innerText = cartItems.length;
+        }
+    }
+    
+    // Call this immediately when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        updateCartBadge();
+    });
+    </script>
+    
+  
+
 </body>
 </html>
