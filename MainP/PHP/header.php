@@ -9,10 +9,10 @@
             <li class="dropdown">
               <a href="#">Books</a>
               <ul class="dropdown-content">
-                <li><a href="borrowbook.php">Borrow a Book</a></li>
-                <li><a href="#">Return a Book</a></li>
-                <li><a href="#">Sell a Book</a></li>
-                <li><a href="#">Buy a Book</a></li>
+                <li><a href="../borrowbook.html">Borrow a Book</a></li>
+                <!-- <li><a href="#">Return a Book</a></li> -->
+                <li><a href="../sellbook.html">Sell a Book</a></li>
+                <!-- <li><a href="#">Buy a Book</a></li> -->
               </ul>
             </li>
 
