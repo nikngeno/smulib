@@ -10,82 +10,88 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <title>SMU Library – Profile</title>
-
-    <!-- ❶ Global styles first -->
     <link rel="stylesheet" href="../CSS/styles.css">
-
-    <!-- ❷ Any other page-specific files that SHOULD override globals -->
     <link rel="stylesheet" href="CSS/team.css">
-
-    <!-- ❸ PROFILE GRID –– must come LAST so nothing overrides it -->
     <link rel="stylesheet" href="../CSS/profile.css">
-    
-    <link rel="icon" href="saint-martin-university_track-field_saints_logo.png">
+    <link rel="icon" href="Imgs/icon/saint-martin-university_track-field_saints_logo.png">
 </head>
 <body>
 
 <?php include "header.php"; ?>
 
-<h3>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h3>
+<h3 id="welcome-message">Loading profile...</h3>
 
-<main class="profile-grid">
-
-   
-<form  class="profile-photo" 
-       id="avatar-form" 
-       action="PHP/upload_avatar.php" 
-       method="POST" 
-       enctype="multipart/form-data">
-
-    <!-- current / fallback avatar -->
-    <img id="avatar-preview"
-         src="<?php echo htmlspecialchars($avatarPath ?? 'Imgs/usersphotos/Nick.jpg'); ?>"
-         alt="Profile picture">
-
-    <!-- hidden input -->
-    <input type="file"
-           name="avatar"
-           id="avatar-input"
-           accept="image/*"
-           hidden>
-
-    <!-- visible overlay button -->
-    <label for="avatar-input" class="avatar-btn">
-        Change&nbsp;photo
-    </label>
-</form>
-<!-- ----------------------------------------------------------------- -->
-
+<main class="profile-grid" id="profile-grid" style="display:none;">
+<div class="profile-photo">
+    <img src="../Imgs/usersphotos/Nick.jpg" alt="Profile Picture" style="width: 100%; max-width: 200px; border-radius: 10px;">
+</div>
 
     <div class="profile-details">
-        <h2>Nicholas Ngeno</h2>
-        <p><strong>Email:</strong> nick@example.com</p>
-        <p><strong>Phone:</strong> +1 234 567 8901</p>
-        <p><strong>Address:</strong> 123 Campus Way, Lacey WA</p>
+        <h2 id="user-fullname"></h2>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+        <p><strong>Phone:</strong> <span id="user-phone"></span></p>
+        <p><strong>Address:</strong> <span id="user-address"></span></p>
     </div>
-
     <div class="profile-active">
         <h3>Active Loans</h3>
-        <ul>
-            <li><em>Clean Code</em> — Due 12 May 2025</li>
-            <li><em>The Pragmatic Programmer</em> — Due 18 May 2025</li>
+        <ul id="active-loans-list">
+            <li>No current active books on profile.</li>
         </ul>
     </div>
-
     <div class="profile-history">
         <h3>Previously Borrowed</h3>
-        <ul>
-            <li><em>Design Patterns</em></li>
-            <li><em>Introduction to Algorithms</em></li>
-        </ul>
+        <ul id="previously-borrowed-list"></ul>
     </div>
-
 </main>
+
+<!-- Sign-out button -->
+<div style="text-align: center; margin: 20px;">
+    <a href="logout.php" class="btn" style="padding: 10px 20px; background: #e00; color: white; text-decoration: none; border-radius: 5px;">Sign Out</a>
+</div>
 
 <footer>
     <p>&copy; 2025 SMU Library</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('fetch_profile.php')
+    .then(response => response.json())
+    .then(result => {
+        if (result.success) {
+            const data = result.data;
+            document.getElementById('welcome-message').innerText = `Welcome, ${data.username}!`;
+            
+            document.getElementById('user-fullname').innerText = data.fullName;
+            document.getElementById('user-email').innerText = data.email;
+            document.getElementById('user-phone').innerText = data.phone;
+            document.getElementById('user-address').innerText = data.address;
+
+            const historyList = document.getElementById('previously-borrowed-list');
+            historyList.innerHTML = '';
+            data.history.forEach(book => {
+                historyList.innerHTML += `<li><em>${book}</em></li>`;
+            });
+
+            const activeLoansList = document.getElementById('active-loans-list');
+            const borrowedBooks = JSON.parse(localStorage.getItem('borrowedBooks')) || [];
+            if (borrowedBooks.length > 0) {
+                activeLoansList.innerHTML = '';
+                borrowedBooks.forEach(book => {
+                    activeLoansList.innerHTML += `<li><em>${book.title}</em> by ${book.author} — Borrowed on ${book.borrowedOn}</li>`;
+                });
+            }
+
+            document.getElementById('profile-grid').style.display = 'grid';
+        } else {
+            document.getElementById('welcome-message').innerText = 'Error loading profile.';
+        }
+    })
+    .catch(() => {
+        document.getElementById('welcome-message').innerText = 'Failed to load profile.';
+    });
+});
+</script>
+
 </body>
 </html>

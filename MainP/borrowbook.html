@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>SMU Library</title>
-  <link rel="icon" type="image" href="saint-martin-university_track-field_saints_logo.png" />
+  <link rel="icon" type="image" href="Imgs/icon/saint-martin-university_track-field_saints_logo.png" />
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="CSS/styles.css">
   <!-- New stylesheet for your books layout -->
@@ -78,6 +78,7 @@
               <a href="">My Account</a>
               <ul class="dropdown-content">
                 <li><a href="sign_in.html">Sign in</a></li>
+                <li><a href="http://localhost:8080/smulib/MainP/PHP/profile.php">My Profile</a></li>
                 <li><a href="maincart.html">
                   My Cart
                   <span id="cart-count-badge" style="background:red;color:white;padding:2px 6px;border-radius:12px;font-size:12px;margin-left:4px;">0</span>
@@ -440,7 +441,45 @@
     });
     </script>
     
-  
+  <script> 
+    document.addEventListener('DOMContentLoaded', function() {
+    const borrowButtons = document.querySelectorAll('.book-action-button');
+
+    borrowButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const bookContainer = this.closest('td');
+            const title = bookContainer.querySelector('.book-title').innerText;
+            const author = bookContainer.querySelector('.book-author').innerText;
+
+            let borrowedBooks = JSON.parse(localStorage.getItem('borrowedBooks')) || [];
+
+            // Check if the book already borrowed
+            const alreadyBorrowed = borrowedBooks.some(book => book.title === title && book.author === author);
+
+            if (alreadyBorrowed) {
+                showToast('You have already borrowed this book!');
+                return;
+            }
+
+            borrowedBooks.push({ title, author, borrowedOn: new Date().toLocaleDateString() });
+            localStorage.setItem('borrowedBooks', JSON.stringify(borrowedBooks));
+
+            showToast(`Borrowed "${title}" successfully!`);
+        });
+    });
+
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.innerText = message;
+        toast.style.visibility = 'visible';
+        toast.style.opacity = '1';
+
+        setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+        setTimeout(() => { toast.style.visibility = 'hidden'; }, 2500);
+    }
+});
+
+  </script>
   
   
 </body>

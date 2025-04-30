@@ -1,6 +1,4 @@
-/* =============================================================
-   FOUR-PANEL PROFILE GRID
-   ============================================================= */
+
 
    body{
     margin:0;
@@ -10,21 +8,21 @@ h1{
     margin:0 0 1rem;      /* no top-gap, keep a bit below it   */
 }
 
-   .profile-grid{
-    display:grid !important;          /* override any stray rules      */
+.profile-grid {
+    display: grid !important;
     grid-template-areas:
         "photo   details  details"
         "photo   active   history";
-    grid-template-columns: 220px 1fr 1fr;  /* sidebar width + 2 flex cols */
+    grid-template-columns: 500px 1fr 1fr;  /* updated sidebar width */
     grid-template-rows: auto 1fr;
-    gap:24px;
+    gap: 24px;
     
-    width:100% !important;
-    box-sizing:border-box;
-    /* optional background you can remove */
-    background:#f9f9e8;
+    width: 100% !important;
+    box-sizing: border-box;
+    background: #f9f9e8;
     margin-top: 0px;
 }
+
 
 /* area mapping ------------------------------------------------ */
 .profile-photo   { grid-area: photo; }
@@ -66,10 +64,7 @@ h1{
         grid-template-rows:auto;
     }
 }
-/* ===========================================================
-   W I D E   P R O F I L E   L A Y O U T
-   Remove any site-wide max-width / margin that centers <main>
-   =========================================================== */
+
    main.profile-grid{
     max-width:none !important;   /* bust any max-width:1200px etc.   */
     margin-left:0   !important;  /* flush with viewport              */
