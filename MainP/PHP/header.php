@@ -31,8 +31,8 @@
               <a href="#">News and Events</a>
               <ul class="dropdown-content">
                 <li><a href="eventcalendar.php">Latest News</a></li>
-                <li><a href="#">Promotions</a></li>
-                <li><a href="#">Support the Library</a></li>
+                <li><a href="../promotions.html">Promotions</a></li>
+                <li><a href="../support.html">Support the Library</a></li>
               </ul>
             </li>
 
