@@ -2,7 +2,7 @@
     <header>
       <link rel="stylesheet" href="../CSS/header.css">
       <div class="nav-container">
-        <h1><a href= "home.php" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
+        <h1><a href= "../index.html" style="color: inherit; text-decoration: none;">SMU Library</a></h1>
         <nav>
           <ul>
             <!-- Menu Item 1 -->
@@ -21,8 +21,8 @@
               <a href="#">Service</a>
               <ul class="dropdown-content">
                 <li><a href="bookappointment.php">Book an Appointment</a></li>
-                <li><a href="reserveroom.php">Reserve  Room</a></li>
-                <li><a href="requestlibrarian.php">Request A Librarian </a></li>
+                <li><a href="../PHP/reserveroom.php">Reserve  Room</a></li>
+                <li><a href="../requestlibrarian.html">Request A Librarian </a></li>
               </ul>
             </li>
 
@@ -30,7 +30,7 @@
             <li class="dropdown">
               <a href="#">News and Events</a>
               <ul class="dropdown-content">
-                <li><a href="../eventcalendar.php">Latest News</a></li>
+                <li><a href="../PHP/eventcalendar.php">Latest News</a></li>
                 <li><a href="../promotions.html">Promotions</a></li>
                 <li><a href="../support.html">Support the Library</a></li>
               </ul>
