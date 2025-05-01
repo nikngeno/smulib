@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="CSS/team.css">
     <link rel="stylesheet" href="../CSS/profile.css">
-    <link rel="icon" href="Imgs/icon/saint-martin-university_track-field_saints_logo.png"/>
+    <link rel="icon" href="../Imgs/icon/saint-martin-university_track-field_saints_logo.png"/>
 </head>
 <body>
 
