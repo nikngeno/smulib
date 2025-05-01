@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_id'] = $user['UserId'];
             $_SESSION['username'] = $user['UserName'];
             
-            echo "<script>alert('Login successful! Redirecting to your profile.'); window.location.href='http://localhost:8080/smulib/MainP/PHP/profile.php';</script>";
+            echo "<script>alert('Login successful! Redirecting to your profile.'); window.location.href='../PHP/profile.php';</script>";
             exit();
         } else {
             echo "<script>alert('Invalid password.');</script>";
