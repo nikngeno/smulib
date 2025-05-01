@@ -6,11 +6,9 @@
 }
 
 html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
-  width: 100%;
-  font-family: Merriweather;
 }
 
 /* =======================
@@ -29,15 +27,16 @@ html, body {
 ======================= */
 .calendar-wrap {
   display: flex;
-  flex-direction: row; /* Changed from column to row */
+  flex-direction: row;
   justify-content: space-between;
   align-items: stretch;
-  height: calc(100vh - 100px); /* Adjust based on your header + footer height */
+  height: calc(100vh - 100px); /* 80px header + 20px footer */
   width: 100%;
   margin: 0;
   padding: 20px;
   gap: 20px;
   background-color: #fdfde9;
+  overflow: hidden; /* Prevent any internal overflow clipping */
 }
 /* =======================
    CALENDAR STRUCTURE
@@ -175,7 +174,7 @@ html, body {
   width: 50%;
   height: 100%;
   overflow-y: auto;
-  border: 2px solid #ba0c2f; /* Red border for events */
+  border: 2px solid #ba0c2f;
   border-radius: 8px;
   padding: 10px;
   background-color: #fff;
