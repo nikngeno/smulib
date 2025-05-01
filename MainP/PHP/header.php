@@ -30,7 +30,7 @@
             <li class="dropdown">
               <a href="#">News and Events</a>
               <ul class="dropdown-content">
-                <li><a href="eventcalendar.php">Latest News</a></li>
+                <li><a href="../eventcalendar.php">Latest News</a></li>
                 <li><a href="../promotions.html">Promotions</a></li>
                 <li><a href="../support.html">Support the Library</a></li>
               </ul>
@@ -61,7 +61,7 @@
                 <a href="">My Account</a>
                 <ul class="dropdown-content">
                   <li><a href="../sign_in.html">Sign in</a></li>
-                  <li><a href="http://localhost:8080/smulib/MainP/PHP/profile.php">My Profile</a></li>
+                  <li><a href="../PHP/profile.php">My Profile</a></li>
                   <li><a href="../maincart.html">My Cart</a></li>
                 </ul>
               </li>

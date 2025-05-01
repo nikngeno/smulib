@@ -17,7 +17,7 @@
   <!-- Main Content Areas -->
   <main class="appointment-container">
     <h2>Book an Appointment</h2>
-    <form class="appointment-form" action="http://localhost:8080/smulib/MainP/DBQueries/appointment.php" method="POST">
+    <form class="appointment-form" action="../DBQueries/appointment.php" method="POST">
       <label for="appointment-type">Appointment Type</label>
       <select id="appointment-type" required>
         <option value="">-- Please select --</option>

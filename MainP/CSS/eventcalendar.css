@@ -1,25 +1,47 @@
-.top-header {
-    background-color: #ba0c2f; /* Solid color */
-    color: #ffffff;
-    margin-bottom: 30px;
-    padding: 20px;
-    text-align: center;
-}
-
+/* =======================
+   GLOBAL STYLES
+======================= */
 * {
   box-sizing: border-box;
 }
 
-ul {
-  list-style-type: none;
-}
-
-body {
-  font-family: Merriweather;
+html, body {
+  margin: 0;
   padding: 0;
+  height: 100%;
   width: 100%;
+  font-family: Merriweather;
 }
 
+/* =======================
+   HEADER
+======================= */
+.top-header {
+  background-color: #ba0c2f; /* Solid color */
+  color: #ffffff;
+  margin-bottom: 30px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* =======================
+   CALENDAR CONTAINER
+======================= */
+.calendar-wrap {
+  display: flex;
+  flex-direction: row; /* Changed from column to row */
+  justify-content: space-between;
+  align-items: stretch;
+  height: calc(100vh - 100px); /* Adjust based on your header + footer height */
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  gap: 20px;
+  background-color: #fdfde9;
+}
+/* =======================
+   CALENDAR STRUCTURE
+======================= */
 .month {
   padding: 25px;
   width: 100%;
@@ -71,9 +93,8 @@ body {
   margin: 0;
 }
 
-.date
- {
-  text-align:center;
+.date {
+  text-align: center;
   padding: 10px;
   margin: 2px;
 }
@@ -81,61 +102,36 @@ body {
 .date:hover,
 .date.active {
   background: red;
-  color : #ffffff;
+  color: #ffffff;
   cursor: pointer;
-
 }
 
 .date.inactive {
   color: #808285;
 }
 
-
-
-
-/*<!-- .days li {
-  list-style-type: none;
-  display: inline-block;
-  width: 13.6%;
-  text-align: center;
-  margin-bottom: 5px;
-  font-size:12px;
-  color: #808285;
-}
-
-.days li .active {
-  padding: 5px;
-  background: #ba0c2f;
-  color: #ffffff !important
-} -->*/
-
+/* =======================
+   CALENDAR BODY
+======================= */
 .calendar-body {
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    height: 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    }
-
-.calendar-wrap {
-  display: flex;
-  justify-content: center;
-  margin: 50px auto;
-  height: 90% !important; 
-  width: 60% !important;
-  gap: 20px;
-    /* max-width: 100% !important;
-    max-height: 100% !important; */
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  border: 2px solid #ba0c2f; /* Red border for calendar */
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
 }
 
+/* =======================
+   EVENT CARD
+======================= */
 .event-item {
   background-color: #f2f2f2;
   border-radius: 5px;
   padding: 20px;
   margin-bottom: 20px;
-  width: 500px;
+  width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -147,16 +143,40 @@ body {
   float: right;
 }
 
-/* Add media queries for smaller screens */
-@media screen and (max-width:720px) {
-  .weekdays li, .days li {width: 13.1%;}
+/* =======================
+   MEDIA QUERIES
+======================= */
+@media screen and (max-width: 720px) {
+  .weekdays li, .days li {
+    width: 13.1%;
+  }
+
+  .calendar-wrap {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 420px) {
-  .weekdays li, .days li {width: 12.5%;}
-  .days li .active {padding: 10px;}
+  .weekdays li, .days li {
+    width: 12.5%;
+  }
+
+  .days li .active {
+    padding: 10px;
+  }
 }
 
 @media screen and (max-width: 290px) {
-  .weekdays li, .days li {width: 12.2%;}
+  .weekdays li, .days li {
+    width: 12.2%;
+  }
+}
+.events-section {
+  width: 50%;
+  height: 100%;
+  overflow-y: auto;
+  border: 2px solid #ba0c2f; /* Red border for events */
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
 }
