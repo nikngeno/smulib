@@ -276,7 +276,12 @@ if ($query !== '') {
             <div class="search-result-item">
               <h3 class="book-title"><?= htmlspecialchars($b['title']) ?></h3>
               <h2 class="book-author"><?= htmlspecialchars($b['author']) ?></h2>
-              <img src="<?= htmlspecialchars($b['cover_path']) ?>" class="book-image"/>
+              <?php $coverPath = htmlspecialchars($b['cover_path']); ?>
+<img src="/SMulib/MainP/<?= $coverPath ?>"
+     class="book-image"
+     alt="Cover for <?= htmlspecialchars($b['title']) ?>"
+     onerror="this.onerror=null; this.src='/SMulib/MainP/Imgs/BookCovers/default_cover.jpg';" />
+
               <div class="book-details">
                 <p class="price">$<?= number_format($b['price'],2) ?></p>
                 <p class="summary"><?= nl2br(htmlspecialchars($b['summary'])) ?></p>

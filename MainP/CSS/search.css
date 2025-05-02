@@ -69,3 +69,19 @@
   .search-button:hover {
     background-color: #e87a00;
   }
+  .book-image {
+    width: 160px;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .book-details .summary {
+    font-size: 14px;
+    color: #444;
+    margin: 10px 0;
+    line-height: 1.4;
+    max-height: 80px;
+    overflow: auto;
+  }
+  
