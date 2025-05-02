@@ -316,3 +316,9 @@ body > div {
   justify-content: flex-start;
 }
 }
+.invisible-on-load {
+  visibility: hidden;
+}
+.visible-now {
+  visibility: visible;
+}

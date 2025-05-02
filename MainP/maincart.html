@@ -182,24 +182,25 @@
                 </div>
                 
                 <!-- RIGHT COLUMN: Totals -->
-                <div class="payment-col right">
+                <div class="payment-col right invisible-on-load">
+
                   <div class="price-row d-flex justify-content-between font-weight-500">
                     <p class="mb-2">Subtotal:</p>
-                    <p class="mb-2">$23.49</p>
+                    <p class="mb-2" id="subtotal-amount">$0.00</p>
                   </div>
                   <div class="price-row d-flex justify-content-between font-weight-500">
                     <p class="mb-0">Tax:</p>
-                    <p class="mb-0">$2.99</p>
+                    <p class="mb-0" id="tax-amount">$0.00</p>
                   </div>
                   <hr class="my-4">
                   <div class="price-row d-flex justify-content-between mb-4">
                     <p class="mb-2">Total:</p>
-                    <p class="mb-2">$26.48</p>
+                    <p class="mb-2" id="total-amount">$0.00</p>
                   </div>
                   <button type="button" class="btn btn-primary btn-block btn-lg">
                     <div class="d-flex justify-content-between">
                       <span>Checkout</span>
-                      <span id="checkout-total">$26.48</span>
+                      <span id="checkout-total">$0.00</span>
                     </div>
                   </button>
                 </div>
@@ -255,7 +256,7 @@
                   </div>
               </div>
               <div class="cart-col col-price">
-                  <p class="mb-0" data-unitprice="${item.price}">$${item.price.toFixed(2)}</p>
+                  <p class="mb-0" data-unitprice="${item.price}">$${(item.price * item.quantity).toFixed(2)}</p>
               </div>
               <div class="cart-col col-remove">
                   <button class="btn btn-danger btn-sm remove-btn">Remove</button>

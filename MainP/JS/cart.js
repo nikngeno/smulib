@@ -83,20 +83,24 @@ function updatePaymentSummary() {
   var taxAmount = overallTotal * taxRate;
   var finalTotal = overallTotal + taxAmount;
 
-  var summaryRows = document.querySelectorAll(".payment-col.right .price-row");
-  if (summaryRows.length >= 3) {
-      var subtotalP = summaryRows[0].getElementsByTagName("p")[1];
-      subtotalP.innerText = "$" + overallTotal.toFixed(2);
-
-      var taxP = summaryRows[1].getElementsByTagName("p")[1];
-      taxP.innerText = "$" + taxAmount.toFixed(2);
-
-      var totalP = summaryRows[2].getElementsByTagName("p")[1];
-      totalP.innerText = "$" + finalTotal.toFixed(2);
+  document.getElementById("subtotal-amount").innerText = "$" + overallTotal.toFixed(2);
+  document.getElementById("tax-amount").innerText = "$" + taxAmount.toFixed(2);
+  document.getElementById("total-amount").innerText = "$" + finalTotal.toFixed(2);
+  
+  const checkoutTotal = document.getElementById("checkout-total");
+  if (checkoutTotal) {
+      checkoutTotal.innerText = "$" + finalTotal.toFixed(2);
   }
+  
 
   var checkoutTotalEl = document.getElementById("checkout-total");
   if (checkoutTotalEl) {
       checkoutTotalEl.innerText = "$" + finalTotal.toFixed(2);
   }
+
+  const summarySection = document.querySelector('.payment-col.right');
+summarySection.classList.remove('invisible-on-load');
+summarySection.classList.add('visible-now');
+
+
 }
