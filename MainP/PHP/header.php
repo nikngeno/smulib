@@ -20,7 +20,7 @@
             <li class="dropdown">
               <a href="#">Service</a>
               <ul class="dropdown-content">
-                <li><a href="bookappointment.php">Book an Appointment</a></li>
+                <li><a href="../bookappointment.html">Book an Appointment</a></li>
                 <li><a href="../PHP/reserveroom.php">Reserve  Room</a></li>
                 <li><a href="../requestlibrarian.html">Request A Librarian </a></li>
               </ul>
