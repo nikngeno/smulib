@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
             // Redirect to the cart page
-            window.location.href = 'maincart.html';
+            window.location.href = './maincart.html';
         });
     });
 });
