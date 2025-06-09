@@ -9,18 +9,22 @@
 </head>
 <body>
 <!-- Firebase App (Core SDK) -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+<!-- Firebase App (compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 
-<!-- Firebase Analytics SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics.js"></script>
+<!-- Firebase Analytics (compat) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-analytics-compat.js"></script>
+
 
 <script>
+
+localStorage.setItem('debug_mode', true);
   // Your Firebase config (from Firebase Console)
   const firebaseConfig = {
   apiKey: "AIzaSyBkSf9FxRjJSxrYVRMckr8zQhPH0xMwrZQ",
   authDomain: "smulib-72d95.firebaseapp.com",
   projectId: "smulib-72d95",
-  storageBucket: "smulib-72d95.firebasestorage.app",
+  storageBucket: "smulib-72d95.appspot.com",
   messagingSenderId: "732312049809",
   appId: "1:732312049809:web:2bbc61babeac9003298730",
   measurementId: "G-48L57YKGB1"
@@ -30,6 +34,8 @@
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
   const analytics = firebase.analytics(app);
+  analytics.logEvent('page_loaded');
+
 </script>
 
   <!-- Header and Navigation -->
@@ -168,6 +174,7 @@
         
         </p>
         <p>This is a test</p>
+        <p>Check this again</p>
       </section>
     </main> 
   </div>
